@@ -29,8 +29,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_locked_icon" />
-                            <entry key="sourceFile" value="C:\Users\Mr.Zero\Desktop\locked_icon.svg" />
+                            <entry key="outputName" value="ic_user_icon" />
+                            <entry key="sourceFile" value="C:\Users\Mr.Zero\Desktop\user_icon.svg" />
                           </map>
                         </option>
                       </PersistentState>

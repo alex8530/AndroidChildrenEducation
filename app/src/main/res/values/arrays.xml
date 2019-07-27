@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="country_arrays">
+        <item>الدولة</item>
+        <item>الدولة1</item>
+        <item>الدولة2</item>
+        <item>الدولة3</item>
+
+
+    </string-array>
+</resources>
