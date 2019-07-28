@@ -3,36 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_personal_file"
+            android:icon="@drawable/ic_user_icon"
+            android:title="الملف الشخصي" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_materials_study"
+            android:icon="@drawable/ic_star"
+            android:title="المواد الدراسية" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_setting"
+            android:title="اعدادات" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+           android:id="@+id/nav_contact_us"
+         android:icon="@drawable/email_icon"
+           android:title="اتصل بنا" />
+       <item
+           android:id="@+id/nav_who_us"
+            android:icon="@drawable/ic_users"
+            android:title="من نحن" />
+        <item
+            android:id="@+id/nav_sgin_out"
+            android:icon="@drawable/ic_logout"
+            android:title="اتسجيل الخروج" />
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
 
 </menu>
