@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".Register3Activity">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +23,11 @@
         <activity android:name=".Register_4Activity" />
         <activity android:name=".Register1Activity" />
         <activity android:name=".Register2Activity" />
-        <activity android:name=".Login1Activity"></activity>
+        <activity android:name=".Login1Activity" />
+        <activity
+            android:name=".Register3Activity"
+
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
