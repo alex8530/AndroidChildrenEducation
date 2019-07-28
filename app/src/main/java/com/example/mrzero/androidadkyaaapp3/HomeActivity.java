@@ -17,6 +17,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,6 +38,19 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ImageView menubar= findViewById(R.id.menubar);
+        menubar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //THIS IS FOR SHOW THE DrawerLayout
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+                drawer.openDrawer(GravityCompat.START);
+            }
+        });
+
+
     }
 
     @Override
