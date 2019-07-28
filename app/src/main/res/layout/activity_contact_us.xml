@@ -213,6 +213,14 @@
                 android:textSize="17sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/telegram_icon"/>
+
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
