@@ -7,7 +7,7 @@
     android:layoutDirection="rtl"
     android:background="@drawable/bg_signup"
     android:layout_height="match_parent"
-    tools:context=".Register2Activity">
+    tools:context=".Register3Activity">
 
     <ImageView
         android:id="@+id/imageView6"
@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/register2logo" />
+        app:srcCompat="@drawable/register3logo" />
 
     <TextView
         android:id="@+id/textView10"
@@ -28,62 +28,40 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
-        android:textSize="16sp"
+        android:textSize="17sp"
         android:textColor="#172735"
         android:layout_marginEnd="8dp"
-        android:text="اكمل ملفك الشخصي 2/3"
+        android:text="اكمل ملفك الشخصي 3/3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="8dp"
-        android:weightSum="100"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10">
-
-
-
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/ic_user_icon" />
-
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="-25dp"
-            android:layout_weight="90"
-            android:entries="@array/type_arrays"
-            android:padding="15dp" />
-
-
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/button"
         android:layout_width="315dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="8dp"
         android:background="#00c2d7"
+        android:backgroundTint="#ffb686"
         android:text="التالي"
         android:textColor="@android:color/white"
-        android:textSize="50px"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:srcCompat="@drawable/photo_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>
