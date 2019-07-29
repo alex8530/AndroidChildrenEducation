@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".ContactUsActivity">
+        <activity android:name=".PersonalActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +27,10 @@
         <activity
             android:name=".Register3Activity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".WhoAreWeActivity" />
+        <activity android:name=".ContactUsActivity" />
+        <activity android:name=".MatrialActivity"></activity>
     </application>
 
 </manifest>
