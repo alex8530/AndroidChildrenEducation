@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".EditPersonalActivity">
+        <activity android:name=".ChangePasswordActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +31,8 @@
         <activity android:name=".WhoAreWeActivity" />
         <activity android:name=".ContactUsActivity" />
         <activity android:name=".MatrialActivity" />
-        <activity android:name=".PersonalActivity"></activity>
+        <activity android:name=".PersonalActivity" />
+        <activity android:name=".EditPersonalActivity"></activity>
     </application>
 
 </manifest>
