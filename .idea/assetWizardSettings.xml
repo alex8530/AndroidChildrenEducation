@@ -35,8 +35,8 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_photo_camera" />
-                            <entry key="sourceFile" value="C:\Users\Mr.Zero\Desktop\photo-camera.svg" />
+                            <entry key="outputName" value="ic_cancel" />
+                            <entry key="sourceFile" value="C:\Users\Mr.Zero\Desktop\cancel.svg" />
                           </map>
                         </option>
                       </PersistentState>
