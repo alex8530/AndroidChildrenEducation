@@ -20,7 +20,7 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@drawable/shape_header"
+        android:background="@drawable/shape_green"
         android:layoutDirection="ltr"
         android:orientation="horizontal">
 
