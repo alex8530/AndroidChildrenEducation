@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".ChallengeActivity">
+        <activity android:name=".MathmaticsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +34,8 @@
         <activity android:name=".PersonalActivity" />
         <activity android:name=".EditPersonalActivity" />
         <activity android:name=".ChangePasswordActivity" />
-        <activity android:name=".AttentionsActivity"></activity>
+        <activity android:name=".AttentionsActivity" />
+        <activity android:name=".ChallengeActivity"></activity>
     </application>
 
 </manifest>
