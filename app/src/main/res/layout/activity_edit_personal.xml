@@ -10,9 +10,8 @@
 
 
     <!--toolbar-->
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
+
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="250dp"
@@ -100,7 +99,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="0dp"
-android:theme="@style/TextLabel"
+        android:theme="@style/TextLabel"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="@+id/guideline122"
@@ -113,7 +112,7 @@ android:theme="@style/TextLabel"
             android:drawablePadding="10dp"
             android:hint="الاسم كامل"
             android:padding="20dp"
-            android:textSize="42px" />
+            android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -133,7 +132,7 @@ android:theme="@style/TextLabel"
             android:drawablePadding="10dp"
             android:hint="البريد الاكتروني"
             android:padding="20dp"
-            android:textSize="42px" />
+            android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -153,7 +152,7 @@ android:theme="@style/TextLabel"
             android:drawablePadding="10dp"
             android:hint="الصف الدراسي"
             android:padding="20dp"
-            android:textSize="42px" />
+            android:textSize="20sp" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -202,7 +201,7 @@ android:theme="@style/TextLabel"
         android:background="#02C59E"
         android:text="حفظ"
         android:textColor="@android:color/white"
-        android:textSize="17sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="@+id/guideline122"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
@@ -225,6 +224,7 @@ android:theme="@style/TextLabel"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:textSize="14sp"
         android:layout_marginBottom="8dp"
         android:textColor="#02C59E"
         android:text="تغيير كلمة المرور"

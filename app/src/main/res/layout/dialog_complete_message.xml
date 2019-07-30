@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="6px"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:text="تم حل تمارين القسم بنجاح"
@@ -37,18 +37,21 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="538px"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="لقد أتممت حل التمرين بنجاح وهذا سيؤهلك للانتقال الى المرحلة التالي"
-                android:textSize="17sp"
-                android:textColor="#434343"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.539"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="لقد أتممت حل التمرين بنجاح وهذا سيؤهلك للانتقال الى المرحلة التالي"
+        android:textColor="#434343"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
     <Button
@@ -62,7 +65,7 @@
         android:background="#2EE2B1"
         android:text="القسم التالي"
         android:textColor="@android:color/white"
-        android:textSize="50px"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

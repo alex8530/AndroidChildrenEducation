@@ -52,7 +52,7 @@
             android:drawablePadding="5dp"
             android:hint="البريد الاكتروني"
             android:padding="15dp"
-            android:textSize="42px" />
+            android:textSize="17sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
