@@ -15,7 +15,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="20dp" />
 
-
     <!--toolbar-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
