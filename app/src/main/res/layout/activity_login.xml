@@ -112,7 +112,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
-        android:id="@+id/btn_forget_pass"
+        android:id="@+id/txt_forget_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -133,7 +133,7 @@
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/btn_forget_pass"
+        app:layout_constraintTop_toBottomOf="@+id/txt_forget_pass"
         app:srcCompat="@drawable/or" />
 
     <TextView

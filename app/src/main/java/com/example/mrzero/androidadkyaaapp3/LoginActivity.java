@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Button btn_enter= findViewById(R.id.btn_register);
-        TextView btn_forget_pass= findViewById(R.id.btn_forget_pass);
+        TextView btn_forget_pass= findViewById(R.id.txt_forget_pass);
         LinearLayout liner_layout_btns= findViewById(R.id.liner_layout_btns);
 
         btn_enter.setOnClickListener(new View.OnClickListener() {
