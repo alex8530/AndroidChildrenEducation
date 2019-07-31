@@ -31,7 +31,6 @@ public class HomeActivity extends AppCompatActivity
 
         //init fragment
         fragment= HomeFragment.getInstance();
-        // Insert the fragment by replacing any existing fragment
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
@@ -90,12 +89,24 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_settings) {
 
+            fragment= EditPersonalFragment.getInstance();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
         } else if (id == R.id.nav_contact_us) {
+
+            startActivity(new Intent(getApplicationContext(), ContactUsActivity.class));
+
 
         } else if (id == R.id.nav_who_us) {
 
-        } else if (id == R.id.nav_sgin_out) {
 
+            startActivity(new Intent(getApplicationContext(), WhoAreWeActivity.class));
+
+
+        } else if (id == R.id.nav_sgin_out) {
+            startActivity(new Intent(getApplicationContext(), Login1Activity.class));
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
