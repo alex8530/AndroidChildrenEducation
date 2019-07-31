@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="12"
-    android:background="#4facfe"
+    android:layout_height="56dp"
+      android:background="#4facfe"
     android:layoutDirection="ltr"
     android:orientation="horizontal">
 
@@ -18,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45"
+        app:layout_constraintVertical_bias="0.44"
         app:srcCompat="@drawable/notifi_icon" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -32,25 +31,21 @@
         android:id="@+id/menubar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9"
         app:srcCompat="@drawable/ic_menubar" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_height="24dp"
         android:layout_marginEnd="8dp"
         android:text="المواد التعليمية"
         android:textColor="@android:color/white"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/menubar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

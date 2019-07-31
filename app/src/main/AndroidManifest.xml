@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".MathmaticsActivity">
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +26,7 @@
         <activity
             android:name=".Register3Activity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".MathmaticsActivity" />
         <activity android:name=".WhoAreWeActivity" />
         <activity android:name=".ContactUsActivity" />
         <activity android:name=".MatrialActivity" />
@@ -35,7 +35,7 @@
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".AttentionsActivity" />
         <activity android:name=".ChallengeActivity" />
-        <activity android:name=".StartActivity"></activity>
+        <activity android:name=".HomeActivity" />
     </application>
 
 </manifest>

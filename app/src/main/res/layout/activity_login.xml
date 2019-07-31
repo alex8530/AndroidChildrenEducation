@@ -116,11 +116,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
-        android:textSize="15sp"
-        android:textColor="@color/colorPrimaryDark"
         android:text="نسيت كلمة المرور؟"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -130,7 +130,7 @@
         android:id="@+id/imageView3"
         android:layout_width="306dp"
         android:layout_height="30dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
@@ -140,10 +140,11 @@
         android:id="@+id/textView6"
         android:layout_width="188dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="8dp"
-        android:textSize="12sp"
         android:text="الدخول بإستخدام الشبكات الاجتماعية"
+        android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
@@ -164,38 +165,37 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
         android:layoutDirection="ltr"
-        android:padding="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="108dp"
-        android:layout_marginTop="12dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.52">
 
 
         <ImageView
-            android:layout_marginEnd="50dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/face_icon"
-              />
+            android:layout_marginEnd="50dp"
+            android:src="@drawable/face_icon" />
 
 
         <ImageView
-            android:layout_marginEnd="50dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/twiter_icon"
-            />
+            android:layout_marginEnd="50dp"
+            android:src="@drawable/twiter_icon" />
 
 
         <ImageView
-             android:layout_width="50dp"
+            android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/google_icon"
-            />
+            android:src="@drawable/google_icon" />
     </LinearLayout>
 
 
