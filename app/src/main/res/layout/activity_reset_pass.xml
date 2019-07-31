@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_signup"
-    tools:context=".Register_4Activity">
+    tools:context=".RestorPassActivity">
 
 
     <ImageView
@@ -57,7 +57,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_register"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="36dp"

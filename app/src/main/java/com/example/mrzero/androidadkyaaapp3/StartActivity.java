@@ -117,7 +117,7 @@ public class StartActivity extends AppCompatActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(this, HomeActivity.class));
+        startActivity(new Intent(this, Login1Activity.class));
         finish();
     }
 
