@@ -66,7 +66,10 @@ public class HomeFragment extends Fragment {
         constraintLayoutMath.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(),MathmaticsActivity.class));
+                Fragment fragment= MathmaticsFragment.getInstance();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
 
             }
         });

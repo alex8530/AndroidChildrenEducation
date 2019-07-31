@@ -26,15 +26,10 @@
         <activity
             android:name=".Register3Activity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".MathmaticsActivity" />
         <activity android:name=".WhoAreWeActivity" />
         <activity android:name=".ContactUsActivity" />
         <activity android:name=".MatrialActivity" />
-        <activity android:name=".PersonalActivity" />
-        <activity android:name=".EditPersonalActivity" />
         <activity android:name=".ChangePasswordActivity" />
-        <activity android:name=".AttentionsActivity" />
-        <activity android:name=".ChallengeActivity" />
         <activity android:name=".HomeActivity" />
     </application>
 
