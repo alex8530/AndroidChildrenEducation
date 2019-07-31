@@ -6,11 +6,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-
-import com.google.android.material.navigation.NavigationView;
 
 public class MatrialActivity extends AppCompatActivity   {
 
@@ -18,9 +13,6 @@ public class MatrialActivity extends AppCompatActivity   {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matrial);
-
-
-
 
     }
 

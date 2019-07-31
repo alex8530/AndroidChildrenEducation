@@ -82,10 +82,16 @@ public class HomeActivity extends AppCompatActivity
 
         if (id == R.id.nav_personal_file) {
 
-            startActivity(new Intent(getApplicationContext(),PersonalActivity.class));
-            finish();
+            fragment= PersonalFragment.getInstance();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
         } else if (id == R.id.nav_materials_study) {
+
+
+            fragment= MaaterialFragment.getInstance();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
         } else if (id == R.id.nav_settings) {
 

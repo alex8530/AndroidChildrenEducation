@@ -40,10 +40,10 @@ public class StartActivity extends AppCompatActivity {
         }
 
         // Making notification bar transparent
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        );
+//        getWindow().setFlags(
+//                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+//                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+//        );
         setContentView(R.layout.activity_start);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);

@@ -89,16 +89,19 @@
 
 
         <TextView
+            android:padding="16sp"
             android:id="@+id/textView25"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
             android:gravity="right"
             android:text="تدفع 65 دولار لكي تقوم بشراء هدية والتي سعرها 56. هل الباقي ادناه هو ما سيعطيك اياه البائع؟"
             android:textColor="#515151"
             android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -133,8 +136,8 @@
         android:text="20"
         android:textSize="20sp"
         android:padding="20dp"
-        android:background="@drawable/shape_enter_btn"
-        app:layout_constraintEnd_toStartOf="@+id/guideline19"
+        android:background="@drawable/test"
+         app:layout_constraintEnd_toStartOf="@+id/guideline19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
 

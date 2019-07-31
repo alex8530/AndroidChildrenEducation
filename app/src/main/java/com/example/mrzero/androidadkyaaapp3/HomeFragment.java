@@ -9,6 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +54,10 @@ public class HomeFragment extends Fragment {
          constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(),ChallengeActivity.class));
+                Fragment fragment= ChalengeFragment.getInstance();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
 
             }
         });
@@ -82,6 +86,17 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+        ImageView notImage= view.findViewById(R.id.imageView9);
+        notImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             Fragment fragment= NotificationFragment.getInstance();
+             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+             fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
+            }
+        });
 
         return  view;
     }
