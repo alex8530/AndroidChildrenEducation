@@ -1,70 +1,44 @@
 package com.example.mrzero.androidadkyaaapp3;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener
+, HomeFragment.OnFragmentInteractionListener {
 
+
+    //this is init fragment to replace between them
+    Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        ConstraintLayout  constraintLayout= findViewById(R.id.constraintLayout2);
-        constraintLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),ChallengeActivity.class));
 
-            }
-        });
+        //init fragment
+        fragment= HomeFragment.getInstance();
+        // Insert the fragment by replacing any existing fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
-        ConstraintLayout  constraintLayoutMath= findViewById(R.id.constraintLayout3);
-        constraintLayoutMath.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MathmaticsActivity.class));
-
-            }
-        });
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ImageView menubar= findViewById(R.id.menubar);
-
-
-
-        menubar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //THIS IS FOR SHOW THE DrawerLayout
-                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-                drawer.openDrawer(GravityCompat.START);
-            }
-        });
 
 
     }
@@ -127,5 +101,10 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

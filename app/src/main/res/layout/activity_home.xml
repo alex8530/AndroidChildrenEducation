@@ -12,11 +12,20 @@ android:layoutDirection="rtl"
     android:fitsSystemWindows="true"
     tools:openDrawer="end">
 
-    <include
+    <!--<include-->
 
-        layout="@layout/app_bar_home"
+        <!--layout="@layout/app_bar_home"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+    <!---->
+    <!---->
+
+    <FrameLayout
+        android:id="@+id/contianer_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:layoutDirection="rtl"
