@@ -8,7 +8,7 @@
         android:layout_height="wrap_content" >
 
         <RadioButton
-            android:background="@drawable/test"
+            android:background="@drawable/shape_btn_answer"
             android:id="@+id/radioMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
