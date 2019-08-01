@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 
 public class HomeFragment extends Fragment {
@@ -55,8 +56,8 @@ public class HomeFragment extends Fragment {
 //        animation= AnimationUtils.loadAnimation(getActivity(),R.anim.up_to_down);
 
         //  I do the next because i need to show the nav when click in image icon , and click on fragment itself
-         ConstraintLayout constraintLayout= view.findViewById(R.id.constraintLayout2);
-         constraintLayout.setOnClickListener(new View.OnClickListener() {
+         LinearLayout challange_layout= view.findViewById(R.id.challange_layout);
+        challange_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Fragment fragment= ChalengeFragment.getInstance();
@@ -67,8 +68,8 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        ConstraintLayout  constraintLayoutMath= view.findViewById(R.id.constraintLayout3);
-        constraintLayoutMath.setOnClickListener(new View.OnClickListener() {
+        LinearLayout  math_layout= view.findViewById(R.id.math_layout);
+        math_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Fragment fragment= MathmaticsFragment.getInstance();
@@ -107,9 +108,6 @@ public class HomeFragment extends Fragment {
         });
 
 
-        //challange clever
-        ConstraintLayout constraintLayout2= view.findViewById(R.id.constraintLayout2);
-//        constraintLayout2.startAnimation(animation);
         return  view;
     }
 
