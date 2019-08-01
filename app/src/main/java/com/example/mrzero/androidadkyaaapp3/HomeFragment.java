@@ -14,6 +14,8 @@ import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 
@@ -21,8 +23,10 @@ public class HomeFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+
     public HomeFragment() {
         // Required empty public constructor
+
     }
 
 
@@ -48,6 +52,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view=  inflater.inflate(R.layout.fragment_home, container, false);
+//        animation= AnimationUtils.loadAnimation(getActivity(),R.anim.up_to_down);
 
         //  I do the next because i need to show the nav when click in image icon , and click on fragment itself
          ConstraintLayout constraintLayout= view.findViewById(R.id.constraintLayout2);
@@ -101,6 +106,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+        //challange clever
+        ConstraintLayout constraintLayout2= view.findViewById(R.id.constraintLayout2);
+//        constraintLayout2.startAnimation(animation);
         return  view;
     }
 

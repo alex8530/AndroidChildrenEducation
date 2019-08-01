@@ -4,6 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Slide;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -42,6 +48,28 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+        //this is for animation the activity
+        initAnimation();
+
 
     }
+
+
+
+    private void initAnimation() {
+        Explode enterTransition = new Explode();
+        enterTransition.setDuration(1000);
+        getWindow().setEnterTransition(enterTransition);
+
+//        Slide slide = new Slide();
+//        slide.setSlideEdge(Gravity.BOTTOM);
+//        slide.setDuration(1000);
+//        getWindow().setEnterTransition(slide);
+
+//
+//        Fade fade =  new Fade();
+//        fade.setDuration(1000);
+//        getWindow().setEnterTransition(fade);
+    }
+
 }
