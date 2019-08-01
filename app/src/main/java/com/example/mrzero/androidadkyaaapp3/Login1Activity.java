@@ -28,7 +28,7 @@ public class Login1Activity extends AppCompatActivity {
 
 
             //add animation
-            startAnimation();
+            startAnimation(Login1Activity.class);
 
             }
         });
@@ -39,17 +39,18 @@ public class Login1Activity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),RegisterActivity.class));
-            }
+                    startAnimation(RegisterActivity.class);
+
+                    }
         });
 
 
 
     }
 
-    private void startAnimation() {
+    private void startAnimation(Class aClass) {
         ActivityOptions options=null;
-        Intent  intent =new Intent(getApplicationContext(),LoginActivity.class);
+        Intent  intent =new Intent(getApplicationContext(), aClass);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 

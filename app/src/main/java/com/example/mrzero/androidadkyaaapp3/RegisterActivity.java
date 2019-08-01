@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.transition.Explode;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -28,6 +29,24 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
 
-
+        initAnimation();
     }
+
+
+    private void initAnimation() {
+        Explode enterTransition = new Explode();
+        enterTransition.setDuration(1000);
+        getWindow().setEnterTransition(enterTransition);
+
+//        Slide slide = new Slide();
+//        slide.setSlideEdge(Gravity.BOTTOM);
+//        slide.setDuration(1000);
+//        getWindow().setEnterTransition(slide);
+
+//
+//        Fade fade =  new Fade();
+//        fade.setDuration(1000);
+//        getWindow().setEnterTransition(fade);
+    }
+
 }
