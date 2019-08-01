@@ -28,7 +28,7 @@ public class Login1Activity extends AppCompatActivity {
 
 
             //add animation
-            startAnimation(Login1Activity.class);
+            startAnimation(LoginActivity.class);
 
             }
         });
