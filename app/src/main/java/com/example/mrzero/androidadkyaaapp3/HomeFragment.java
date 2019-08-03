@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.transition.Explode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,10 +52,10 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
        View view=  inflater.inflate(R.layout.fragment_home, container, false);
-//        animation= AnimationUtils.loadAnimation(getActivity(),R.anim.up_to_down);
-
+         initAnimation();
         //  I do the next because i need to show the nav when click in image icon , and click on fragment itself
          LinearLayout challange_layout= view.findViewById(R.id.challange_layout);
         challange_layout.setOnClickListener(new View.OnClickListener() {
@@ -111,6 +112,21 @@ public class HomeFragment extends Fragment {
         return  view;
     }
 
+    private void initAnimation() {
+        Explode enterTransition = new Explode();
+        enterTransition.setDuration(1000);
+        getActivity().getWindow().setEnterTransition(enterTransition);
+
+//        Slide slide = new Slide();
+//        slide.setSlideEdge(Gravity.BOTTOM);
+//        slide.setDuration(1000);
+//        getWindow().setEnterTransition(slide);
+
+//
+//        Fade fade =  new Fade();
+//        fade.setDuration(1000);
+//        getWindow().setEnterTransition(fade);
+    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
