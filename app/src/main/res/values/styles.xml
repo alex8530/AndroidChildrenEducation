@@ -36,5 +36,19 @@
         <item name="colorControlActivated">@color/statusbarColor</item>
     </style>
 
+    <style name="TextLabe2" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/gray</item>
+
+        <!-- Inactive underline color-->
+        <item name="colorControlNormal">@color/gray_light</item>
+
+
+
+        <!-- Cursor and Active underline color and hint color .. uses colorAccent by default if not defined-->
+
+        <item name="colorControlActivated">@color/color_plue_for_textinput</item>
+    </style>
+
 
 </resources>
