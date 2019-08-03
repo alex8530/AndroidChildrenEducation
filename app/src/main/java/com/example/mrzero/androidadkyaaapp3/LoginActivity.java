@@ -53,8 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        //this is for animation the activity
-        initAnimation();
+
 
 
     }
@@ -72,20 +71,5 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void initAnimation() {
-        Explode enterTransition = new Explode();
-        enterTransition.setDuration(1000);
-        getWindow().setEnterTransition(enterTransition);
-
-//        Slide slide = new Slide();
-//        slide.setSlideEdge(Gravity.BOTTOM);
-//        slide.setDuration(1000);
-//        getWindow().setEnterTransition(slide);
-
-//
-//        Fade fade =  new Fade();
-//        fade.setDuration(1000);
-//        getWindow().setEnterTransition(fade);
-    }
 
 }

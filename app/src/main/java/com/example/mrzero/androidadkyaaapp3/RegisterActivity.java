@@ -28,25 +28,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-
-        initAnimation();
-    }
-
-
-    private void initAnimation() {
-        Explode enterTransition = new Explode();
-        enterTransition.setDuration(1000);
-        getWindow().setEnterTransition(enterTransition);
-
-//        Slide slide = new Slide();
-//        slide.setSlideEdge(Gravity.BOTTOM);
-//        slide.setDuration(1000);
-//        getWindow().setEnterTransition(slide);
-
-//
-//        Fade fade =  new Fade();
-//        fade.setDuration(1000);
-//        getWindow().setEnterTransition(fade);
     }
 
 }
