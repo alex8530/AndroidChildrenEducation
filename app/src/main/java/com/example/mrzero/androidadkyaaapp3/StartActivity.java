@@ -100,7 +100,7 @@ public class StartActivity extends AppCompatActivity {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.gray));
+            dots[i].setTextColor(getResources().getColor(R.color.my_gray));
             dotsLayout.addView(dots[i]);
         }
 

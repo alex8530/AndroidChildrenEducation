@@ -1,6 +1,7 @@
 package com.example.mrzero.androidadkyaaapp3;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -12,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 
 public class PersonalFragment extends Fragment {
@@ -54,6 +57,17 @@ public class PersonalFragment extends Fragment {
                 drawer.openDrawer(GravityCompat.START);
             }
         });
+
+        CircularImageView circularImageView = view.findViewById(R.id.circularImageView);
+
+
+        circularImageView.setShadowEnable(false);
+// or with custom param
+        circularImageView.setShadowRadius(1);
+        circularImageView.setShadowColor(Color.TRANSPARENT);
+        circularImageView.setBackgroundColor(Color.TRANSPARENT);
+        circularImageView.setShadowGravity(CircularImageView.ShadowGravity.CENTER);
+
 
 
         return view;

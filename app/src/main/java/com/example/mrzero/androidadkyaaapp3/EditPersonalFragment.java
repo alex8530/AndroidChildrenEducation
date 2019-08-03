@@ -14,7 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 
 public class EditPersonalFragment extends Fragment {
@@ -57,6 +59,21 @@ public class EditPersonalFragment extends Fragment {
                 drawer.openDrawer(GravityCompat.START);
             }
         });
+
+
+        // Get reference of widgets from XML layout
+        Spinner spinner = (Spinner)view. findViewById(R.id.spinner);
+
+
+
+        // Initializing an ArrayAdapter
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
+                getActivity(),R.layout.row_spinner_item,getResources().getStringArray(R.array.country_arrays)
+        );
+        spinnerArrayAdapter.setDropDownViewResource(R.layout.row_spinner_item);
+        spinner.setAdapter(spinnerArrayAdapter);
+
+
 
 
         return view;

@@ -8,6 +8,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textSize="14sp"
-    android:textColor="#BDC4CB"
+    android:textColor="#172735"
     android:textStyle="normal"
     xmlns:tools="http://schemas.android.com/tools" />

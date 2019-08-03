@@ -4,21 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="rtl"
     android:background="@drawable/bg_login"
+    android:layoutDirection="rtl"
     tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline23"
         app:srcCompat="@drawable/login_logo" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -26,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="40dp"/>
+        app:layout_constraintGuide_end="40dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -49,19 +48,19 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:theme="@style/TextLabe2"
 
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="425dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_mail_icon"
-                android:drawablePadding="10dp"
+                android:drawablePadding="7dp"
                 android:hint="البريد الاكتروني"
                 android:padding="20dp"
-                android:textSize="17sp" />
+                android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -79,21 +78,23 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:theme="@style/TextLabe2"
             app:passwordToggleEnabled="true"
+
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="425dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:drawableStart="@drawable/ic_locked_icon"
-                android:drawablePadding="10dp"
+
+                android:drawablePadding="7dp"
                 android:hint="كلمة المرور"
                 android:inputType="textPassword"
                 android:padding="20dp"
-                android:paddingStart="10dp"
-                android:textSize="17sp" />
+                android:textSize="14sp"
+                android:theme="@style/TextLabe2" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
@@ -105,7 +106,7 @@
         android:background="@drawable/shape_enter_btn"
         android:text="دخول"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -120,7 +121,7 @@
         android:layout_marginEnd="8dp"
         android:text="نسيت كلمة المرور؟"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -137,13 +138,15 @@
         app:srcCompat="@drawable/or" />
 
     <TextView
+        android:gravity="center"
         android:id="@+id/textView6"
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="8dp"
         android:text="الدخول بإستخدام الشبكات الاجتماعية"
+        android:textColor="#070707"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -157,8 +160,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:text="دخول"
-        android:textColor="#000"
-        android:textSize="20sp"
+        android:textColor="#172735"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -168,8 +171,8 @@
         android:id="@+id/liner_layout_btns"
         android:layout_width="0dp"
         android:layout_height="0dp"
+         android:gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:gravity="center_horizontal"
         android:layoutDirection="ltr"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -198,6 +201,13 @@
             android:layout_height="50dp"
             android:src="@drawable/google_icon" />
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".13"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 public class Register2Activity extends AppCompatActivity {
 
@@ -24,6 +26,22 @@ public class Register2Activity extends AppCompatActivity {
 
             }
         });
+
+
+        // Get reference of widgets from XML layout
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+
+
+
+        // Initializing an ArrayAdapter
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
+                this,R.layout.row_spinner_item2,getResources().getStringArray(R.array.type_arrays)
+        );
+        spinnerArrayAdapter.setDropDownViewResource(R.layout.row_spinner_item2);
+        spinner.setAdapter(spinnerArrayAdapter);
+
+
+
 
 
     }

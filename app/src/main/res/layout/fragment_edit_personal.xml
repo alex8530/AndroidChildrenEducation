@@ -31,10 +31,11 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline6"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/notifi_icon" />
 
             <androidx.constraintlayout.widget.Guideline
@@ -48,19 +49,19 @@
                 android:id="@+id/menubar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="21dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.9"
+                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_menubar" />
 
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="21dp"
                 android:layout_marginEnd="8dp"
                 android:text="تعديل الملف الشخصي"
                 android:textColor="@android:color/white"
@@ -68,7 +69,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/guideline6"
                 app:layout_constraintEnd_toStartOf="@+id/menubar"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.9" />
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -81,8 +82,7 @@
             android:layout_marginTop="70dp"
             android:layout_marginEnd="106dp"
             android:layout_marginBottom="26dp"
-            android:elevation="1dp"
-            android:scaleType="centerCrop"
+             android:scaleType="centerCrop"
             android:src="@drawable/avater"
             app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -116,10 +116,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_user_icon"
-            android:drawablePadding="10dp"
+            android:drawablePadding="7dp"
             android:hint="الاسم كامل"
             android:padding="20dp"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -137,10 +137,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_mail_icon"
-            android:drawablePadding="10dp"
+            android:drawablePadding="7dp"
             android:hint="البريد الاكتروني"
             android:padding="20dp"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -158,10 +158,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_user_icon"
-            android:drawablePadding="10dp"
+            android:drawablePadding="7dp"
             android:hint="الصف الدراسي"
             android:padding="20dp"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -170,31 +170,35 @@
             android:id="@+id/linearLayout3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:layout_marginTop="8dp"
             android:weightSum="100"
-             app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            android:layout_marginRight="20dp"
+
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
             app:layout_constraintStart_toStartOf="@+id/guideline122"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
 
             <ImageView
+
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_weight="10"
-                android:src="@drawable/ic_user_icon" />
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:src="@drawable/ic_flag_icon" />
 
 
             <Spinner
 
-
                 android:id="@+id/spinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-25dp"
-                android:layout_weight="90"
-                android:entries="@array/country_arrays"
-                android:padding="15dp" />
+                android:layout_marginStart="-12dp"
+                android:layout_weight="95"
+                android:padding="20dp"
+                android:textSize="14sp" />
+
+
 
 
         </LinearLayout>
@@ -204,13 +208,13 @@
         android:id="@+id/btn_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
         android:background="#02C59E"
         android:text="حفظ"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
+        android:textSize="16.7sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="@+id/guideline122"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
@@ -234,10 +238,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="25dp"
         android:text="تغيير كلمة المرور"
-        android:textColor="#02C59E"
-        android:textSize="14sp"
+        android:textSize="13.3sp"
+        android:textColor="#02c59e"
         app:layout_constraintEnd_toStartOf="@+id/guideline122"
         app:layout_constraintStart_toStartOf="@+id/guideline12"
         app:layout_constraintTop_toBottomOf="@+id/btn_register" />
