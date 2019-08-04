@@ -22,7 +22,7 @@ public class HomeActivity extends AppCompatActivity
 
     //this is init fragment to replace between them
     Fragment fragment;
-
+  static   FragmentManager fragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity
 
         //init fragment
         fragment= HomeFragment.getInstance();
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
 
@@ -83,21 +83,18 @@ public class HomeActivity extends AppCompatActivity
         if (id == R.id.nav_personal_file) {
 
             fragment= PersonalFragment.getInstance();
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+             fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
         } else if (id == R.id.nav_materials_study) {
 
 
             fragment= MaaterialFragment.getInstance();
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+             fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
         } else if (id == R.id.nav_settings) {
 
             fragment= EditPersonalFragment.getInstance();
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+             fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
         } else if (id == R.id.nav_contact_us) {
 
@@ -123,5 +120,9 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    public static   void replaceFragmentFromActivity(Fragment fragment){
+       fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
     }
 }

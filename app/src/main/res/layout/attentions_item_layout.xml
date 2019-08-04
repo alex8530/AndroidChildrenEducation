@@ -3,43 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:background="@drawable/shape_white_back"
+    android:elevation="5dp"
+    android:layout_height="48dp"
+    android:layoutDirection="rtl"
+    android:layout_marginTop="15dp"
+    android:padding="5dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginStart="10dp"
+    android:background="@drawable/shape_white_back_notification"
     android:orientation="vertical">
 
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-         android:layout_marginBottom="8dp"
-         app:layout_constraintBottom_toTopOf="@+id/guideline16"
-        app:layout_constraintStart_toEndOf="@id/textView24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView24"
-        app:srcCompat="@drawable/ic_checked" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-         android:padding="10dp"
-         android:gravity="right"
-        android:text="تم حل التمرين الاول بنجاح"
-        android:textColor="#172735"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline16"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".8"/>
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:srcCompat="@drawable/ic_checked" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helveticaneuew23forsky_reg"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="تم حل التمرين الاول بنجاح"
+
+            android:textColor="#172735"
+            android:textSize="13.3sp" />
+    </LinearLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

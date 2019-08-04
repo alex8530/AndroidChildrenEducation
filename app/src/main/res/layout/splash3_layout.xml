@@ -37,10 +37,13 @@
 
             <TextView
                 android:id="@+id/textView"
+                android:layout_marginTop="8dp"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
+                android:fontFamily="@font/helveticaneuew23forsky_reg"
                 android:text="للجميع الحق في التعلم"
                 android:textColor="#3B3B3B"
                 android:textSize="25sp"
@@ -48,13 +51,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:layout_constraintVertical_chainStyle="spread_inside" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="538px"
+                android:layout_width="186dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/helveticaneuew23forsky_reg"
+
                 android:gravity="center"
                 android:text="يمنح الامان للطفل من حيث التعليم لالكتروني ذو الجودة العالية"
                 android:textSize="12sp"

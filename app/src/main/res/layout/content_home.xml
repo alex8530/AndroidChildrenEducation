@@ -70,6 +70,8 @@
 
 
         <TextView
+            android:fontFamily="@font/helveticaneuew23forsky_reg"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="أهلاً ومرحباً بك، "
@@ -78,6 +80,8 @@
 
 
         <TextView
+            android:fontFamily="@font/helveticaneuew23forsky_reg"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="محمد"
@@ -125,6 +129,8 @@
 
 
                 <TextView
+                    android:fontFamily="@font/helveticaneuew23forsky_reg"
+
                     android:id="@+id/txt"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
@@ -163,15 +169,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="3"
-                    android:src="@drawable/calc_icon" />
+                    android:src="@drawable/ic_calculator" />
 
 
                 <TextView
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/helveticaneuew23forsky_reg"
+
                     android:text="رياضيات"
                     android:textColor="#ffffff"
                     android:textSize="16.7sp" />
@@ -191,19 +198,19 @@
                 <ImageView
 
                     android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="58dp"
                     android:layout_height="0dp"
                     android:layout_weight="3"
-                    android:src="@drawable/abc_icon" />
+                    android:src="@drawable/ic_notebook" />
 
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
+                     android:layout_weight="1"
                     android:text="اثراء"
+                    android:fontFamily="@font/helveticaneuew23forsky_reg"
 
                     android:textColor="#ffffff"
                     android:textSize="16.7sp" />
@@ -231,19 +238,19 @@
                 <ImageView
 
                     android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="58dp"
                     android:layout_height="0dp"
                     android:layout_weight="3"
-                    android:src="@drawable/en_icon_3" />
+                    android:src="@drawable/ic_english_language" />
 
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
                     android:text="لغة انجليزية"
+                    android:fontFamily="@font/helveticaneuew23forsky_reg"
 
                     android:textColor="#ffffff"
                     android:textSize="16.7sp" />
@@ -266,15 +273,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="3"
-                    android:src="@drawable/ar_icon" />
+                    android:src="@drawable/ic_arabic_language" />
 
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/helveticaneuew23forsky_reg"
+
                     android:text="لغة عربية"
                     android:textColor="#ffffff"
                     android:textSize="16.7sp" />

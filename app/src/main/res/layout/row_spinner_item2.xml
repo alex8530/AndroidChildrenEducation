@@ -9,5 +9,7 @@
     android:layout_height="wrap_content"
     android:textSize="14sp"
     android:textColor="#172735"
+    android:fontFamily="@font/helveticaneuew23forsky_reg"
+
     android:textStyle="normal"
     xmlns:tools="http://schemas.android.com/tools" />

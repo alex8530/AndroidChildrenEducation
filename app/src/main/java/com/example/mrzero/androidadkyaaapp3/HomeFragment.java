@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
 
         // Inflate the layout for this fragment
        View view=  inflater.inflate(R.layout.fragment_home, container, false);
-         initAnimation();
+
         //  I do the next because i need to show the nav when click in image icon , and click on fragment itself
          LinearLayout challange_layout= view.findViewById(R.id.challange_layout);
         challange_layout.setOnClickListener(new View.OnClickListener() {
@@ -112,21 +112,7 @@ public class HomeFragment extends Fragment {
         return  view;
     }
 
-    private void initAnimation() {
-        Explode enterTransition = new Explode();
-        enterTransition.setDuration(1000);
-        getActivity().getWindow().setEnterTransition(enterTransition);
 
-//        Slide slide = new Slide();
-//        slide.setSlideEdge(Gravity.BOTTOM);
-//        slide.setDuration(1000);
-//        getWindow().setEnterTransition(slide);
-
-//
-//        Fade fade =  new Fade();
-//        fade.setDuration(1000);
-//        getWindow().setEnterTransition(fade);
-    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {

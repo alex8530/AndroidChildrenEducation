@@ -40,6 +40,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/helveticaneuew23forsky_reg"
+
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:text="تعليم آمن"
@@ -58,6 +60,8 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:gravity="center"
+                android:fontFamily="@font/helveticaneuew23forsky_reg"
+
                 android:text="يمنح الامان للطفل من حيث التعليم لالكتروني ذو الجودة العالية"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"

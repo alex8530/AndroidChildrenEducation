@@ -51,7 +51,14 @@ public class MathmaticsFragment extends Fragment {
         });
 
 
+        ImageView notImage= view.findViewById(R.id.imageView9);
+        notImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HomeActivity.replaceFragmentFromActivity(NotificationFragment.getInstance());
 
+            }
+        });
 
         return view;
     }

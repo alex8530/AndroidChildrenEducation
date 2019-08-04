@@ -58,6 +58,7 @@
                 app:srcCompat="@drawable/ic_menubar" />
 
             <TextView
+
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -118,6 +119,8 @@
             android:drawableStart="@drawable/ic_user_icon"
             android:drawablePadding="7dp"
             android:hint="الاسم كامل"
+            android:fontFamily="@font/helveticaneuew23forsky_reg"
+
             android:padding="20dp"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -140,6 +143,8 @@
             android:drawablePadding="7dp"
             android:hint="البريد الاكتروني"
             android:padding="20dp"
+            android:fontFamily="@font/helveticaneuew23forsky_reg"
+
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -160,6 +165,8 @@
             android:drawableStart="@drawable/ic_user_icon"
             android:drawablePadding="7dp"
             android:hint="الصف الدراسي"
+            android:fontFamily="@font/helveticaneuew23forsky_reg"
+
             android:padding="20dp"
             android:textSize="14sp" />
 
@@ -206,6 +213,8 @@
 
     <Button
         android:id="@+id/btn_register"
+        android:fontFamily="@font/helveticaneuew23forsky_reg"
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -241,6 +250,8 @@
         android:layout_marginTop="25dp"
         android:text="تغيير كلمة المرور"
         android:textSize="13.3sp"
+        android:fontFamily="@font/helveticaneuew23forsky_reg"
+
         android:textColor="#02c59e"
         app:layout_constraintEnd_toStartOf="@+id/guideline122"
         app:layout_constraintStart_toStartOf="@+id/guideline12"

@@ -23,6 +23,8 @@
         app:srcCompat="@drawable/register3logo" />
 
     <TextView
+        android:fontFamily="@font/helveticaneuew23forsky_reg"
+
         android:id="@+id/textView10"
         android:layout_width="299dp"
         android:layout_height="0dp"
@@ -74,6 +76,9 @@
         android:background="#00c2d7"
         android:backgroundTint="#ffb686"
         android:text="التالي"
+        android:fontFamily="@font/helveticaneuew23forsky_reg"
+        android:paddingBottom="7dp"
+
         android:textSize="16.7sp"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"

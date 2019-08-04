@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +54,14 @@ public class MaaterialFragment extends Fragment {
         });
 
 
+        ImageView notImage= view.findViewById(R.id.imageView9);
+        notImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              HomeActivity.replaceFragmentFromActivity(NotificationFragment.getInstance());
 
+            }
+        });
         return view;
     }
 

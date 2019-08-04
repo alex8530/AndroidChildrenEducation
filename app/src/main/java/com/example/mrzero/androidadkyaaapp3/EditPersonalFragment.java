@@ -73,7 +73,14 @@ public class EditPersonalFragment extends Fragment {
         spinnerArrayAdapter.setDropDownViewResource(R.layout.row_spinner_item);
         spinner.setAdapter(spinnerArrayAdapter);
 
+        ImageView notImage= view.findViewById(R.id.imageView9);
+        notImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HomeActivity.replaceFragmentFromActivity(NotificationFragment.getInstance());
 
+            }
+        });
 
 
         return view;

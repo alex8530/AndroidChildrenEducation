@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,15 +59,26 @@ public class PersonalFragment extends Fragment {
             }
         });
 
+
+        //this is for hide the shadow of the image
         CircularImageView circularImageView = view.findViewById(R.id.circularImageView);
-
-
         circularImageView.setShadowEnable(false);
-// or with custom param
         circularImageView.setShadowRadius(1);
         circularImageView.setShadowColor(Color.TRANSPARENT);
         circularImageView.setBackgroundColor(Color.TRANSPARENT);
         circularImageView.setShadowGravity(CircularImageView.ShadowGravity.CENTER);
+
+
+        ImageView notImage= view.findViewById(R.id.imageView9);
+        notImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HomeActivity.replaceFragmentFromActivity(NotificationFragment.getInstance());
+
+
+            }
+        });
+
 
 
 

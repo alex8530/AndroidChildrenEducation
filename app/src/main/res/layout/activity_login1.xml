@@ -21,19 +21,22 @@
 
 
     <Button
+        android:fontFamily="@font/helveticaneuew23forsky_reg"
         android:id="@+id/btn_enter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="43dp"
-        android:layout_marginEnd="48dp"
+        android:gravity="center"
+         android:layout_marginEnd="48dp"
         android:background="@drawable/shape_enter_btn"
         android:text="دخول"
+        android:paddingBottom="7dp"
+
         android:textColor="@android:color/white"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16.7sp"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
     <Button
@@ -42,11 +45,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/helveticaneuew23forsky_reg"
+        android:gravity="center"
+        android:paddingBottom="7dp"
         android:layout_marginEnd="48dp"
         android:background="@drawable/shape_register_btn"
         android:text="تسجيل"
         android:textColor="@android:color/white"
-        android:textSize="17sp"
+        android:textSize="16.7sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_enter" />
@@ -60,6 +66,8 @@
         android:layout_marginEnd="8dp"
         android:text="دخول كزائر"
         android:textSize="14sp"
+        android:fontFamily="@font/helveticaneuew23forsky_reg"
+
         android:textColor="#707070"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

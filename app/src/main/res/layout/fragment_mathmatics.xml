@@ -58,6 +58,7 @@
 
 
             <TextView
+
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,6 +76,8 @@
 
 
         <TextView
+            android:fontFamily="@font/helveticaneuew23forsky_reg"
+
             android:id="@+id/textView28"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -125,6 +128,8 @@
             android:layout_marginTop="18dp"
             android:text="جمع"
             android:textSize="17sp"
+            android:fontFamily="@font/helveticaneuew23forsky_reg"
+
             app:layout_constraintEnd_toStartOf="@+id/guideline17"
             app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView4" />
         <HorizontalScrollView
@@ -169,6 +174,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:text="طرح"
+            android:fontFamily="@font/helveticaneuew23forsky_reg"
+
             android:textSize="17sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline17"
             app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />

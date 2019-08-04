@@ -34,7 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         btn_enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startAnimation(HomeActivity.class);
+
+                Intent  intent =new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -58,18 +60,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void startAnimation(Class aClass) {
-        ActivityOptions options=null;
-        Intent  intent =new Intent(getApplicationContext(), aClass);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-
-            options = ActivityOptions.makeSceneTransitionAnimation(this );
-            startActivity(intent,options.toBundle());
-        }else {
-            startActivity(intent );
-        }
-    }
 
 
 }
