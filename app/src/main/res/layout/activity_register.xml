@@ -94,8 +94,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-             android:weightSum="100"
             android:layout_marginRight="20dp"
+            android:weightSum="100"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
@@ -110,17 +110,31 @@
                 android:src="@drawable/ic_flag_icon" />
 
 
-            <Spinner
-                android:id="@+id/spinner"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-12dp"
                 android:layout_weight="95"
-                android:padding="20dp"
-                android:textSize="14sp" />
+
+                >
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ccpDialog_showFlag="false"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_autoDetectLanguage="true"
+                    app:ccp_defaultLanguage="ARABIC"
+                    app:ccp_defaultNameCode="SA"
+                    app:ccp_showFullName="true"
+                    app:ccp_showNameCode="false"
+                    app:ccp_showPhoneCode="false"
+                    app:ccp_textGravity="LEFT" />
+            </LinearLayout>
 
 
         </LinearLayout>
+
 
         <View
 

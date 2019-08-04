@@ -66,12 +66,12 @@ public class EditPersonalFragment extends Fragment {
 
 
 
-        // Initializing an ArrayAdapter
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
-                getActivity(),R.layout.row_spinner_item,getResources().getStringArray(R.array.country_arrays)
-        );
-        spinnerArrayAdapter.setDropDownViewResource(R.layout.row_spinner_item);
-        spinner.setAdapter(spinnerArrayAdapter);
+//        // Initializing an ArrayAdapter
+//        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
+//                getActivity(),R.layout.row_spinner_item,getResources().getStringArray(R.array.country_arrays)
+//        );
+//        spinnerArrayAdapter.setDropDownViewResource(R.layout.row_spinner_item);
+//        spinner.setAdapter(spinnerArrayAdapter);
 
         ImageView notImage= view.findViewById(R.id.imageView9);
         notImage.setOnClickListener(new View.OnClickListener() {

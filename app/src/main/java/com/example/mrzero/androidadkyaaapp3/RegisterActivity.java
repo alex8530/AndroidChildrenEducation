@@ -27,13 +27,13 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         // Initializing an ArrayAdapter
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
-                this,R.layout.row_spinner_item,getResources().getStringArray(R.array.country_arrays)
-        );
-        spinnerArrayAdapter.setDropDownViewResource(R.layout.row_spinner_item);
-        spinner.setAdapter(spinnerArrayAdapter);
-
-
+//        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
+//                this,R.layout.row_spinner_item,getResources().getStringArray(R.array.country_arrays)
+//        );
+//        spinnerArrayAdapter.setDropDownViewResource(R.layout.row_spinner_item);
+//        spinner.setAdapter(spinnerArrayAdapter);
+//
+//
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

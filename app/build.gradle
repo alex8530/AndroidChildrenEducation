@@ -37,4 +37,7 @@ dependencies {
     implementation 'com.mikhaellopez:circularimageview:4.0.1'
 
 
+    //for spinner countery
+    implementation 'com.hbb20:ccp:2.3.0'
+
 }
