@@ -113,9 +113,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="95"
-
-                >
+                android:layout_weight="95" >
 
                 <com.hbb20.CountryCodePicker
                     android:id="@+id/ccp"

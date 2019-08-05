@@ -3,8 +3,13 @@ package com.example.mrzero.androidadkyaaapp3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 public class ContactUsActivity extends AppCompatActivity {
 
@@ -21,5 +26,22 @@ public class ContactUsActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        TextInputEditText txt_message = findViewById(R.id.txt_message);
+
+        txt_message.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b==true){
+                    Toast.makeText(ContactUsActivity.this, "foces true", Toast.LENGTH_SHORT).show();
+
+                }else {
+                    Toast.makeText(ContactUsActivity.this, "foces false", Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        });
+
     }
 }

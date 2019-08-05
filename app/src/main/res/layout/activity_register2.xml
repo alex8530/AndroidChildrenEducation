@@ -68,7 +68,7 @@
 
 
         <Spinner
-
+            android:gravity="right"
             android:id="@+id/spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
