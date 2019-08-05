@@ -39,5 +39,7 @@ dependencies {
 
     //for spinner countery
     implementation 'com.hbb20:ccp:2.3.0'
+    implementation 'com.github.arcadefire:nice-spinner:1.4.3'
+
 
 }

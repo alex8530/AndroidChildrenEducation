@@ -82,7 +82,7 @@ android:layoutDirection="rtl"
             android:layout_marginBottom="40dp"
             android:background="@drawable/shape_white_back"
             android:elevation="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintBottom_toTopOf="@+id/btn_answer_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -130,7 +130,7 @@ android:layoutDirection="rtl"
             app:layout_constraintGuide_percent=".4" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn_answer_2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -138,12 +138,11 @@ android:layoutDirection="rtl"
             android:layout_marginEnd="8dp"
             android:text="20"
             android:fontFamily="@font/helveticaneuew23forsky_reg"
-
+            android:textSize="16.7sp"
             android:focusableInTouchMode="true"
             android:clickable="true"
             android:focusable="true"
-            android:textSize="20sp"
-            android:padding="20dp"
+             android:padding="20dp"
             android:background="@drawable/shape_btn_answer"
             app:layout_constraintEnd_toStartOf="@+id/guideline19"
             app:layout_constraintStart_toStartOf="parent"
@@ -157,7 +156,7 @@ android:layoutDirection="rtl"
             app:layout_constraintGuide_percent=".5" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btn_answer_1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -166,14 +165,14 @@ android:layoutDirection="rtl"
             android:fontFamily="@font/helveticaneuew23forsky_reg"
 
             android:focusableInTouchMode="true"
-             android:textSize="20sp"
+            android:textSize="16.7sp"
             android:padding="20dp"
             android:clickable="true"
             android:focusable="true"
             android:background="@drawable/shape_btn_answer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline19"
-            app:layout_constraintTop_toTopOf="@+id/button3" />
+            app:layout_constraintTop_toTopOf="@+id/btn_answer_2" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline20"
@@ -183,37 +182,40 @@ android:layoutDirection="rtl"
             app:layout_constraintGuide_begin="20dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_answer_4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/shape_btn_answer"
+        android:fontFamily="@font/helveticaneuew23forsky_reg"
         android:padding="20dp"
         android:text="100"
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
-
-        android:textSize="20sp"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="16.7sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline19"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintStart_toStartOf="@+id/btn_answer_2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_answer_2" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btn_answer_3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/shape_btn_answer"
+        android:fontFamily="@font/helveticaneuew23forsky_reg"
         android:padding="20dp"
         android:text="80"
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
-
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="16.7sp"        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline19"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_answer_1" />
 
 
     <Button
@@ -225,11 +227,9 @@ android:layoutDirection="rtl"
         android:layout_marginBottom="32dp"
         android:backgroundTint="#23DB92"
         android:fontFamily="@font/helveticaneuew23forsky_reg"
-        android:padding="20dp"
-        android:text="أجب"
+         android:text="أجب"
         android:textColor="#fff"
-        android:paddingBottom="7dp"
-
+            android:gravity="center"
         android:textSize="18.3sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -253,6 +253,33 @@ android:layoutDirection="rtl"
         app:layout_constraintStart_toEndOf="@+id/textView27"
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView27"
+        app:layout_constraintEnd_toStartOf="@+id/guideline19"
+        app:layout_constraintStart_toStartOf="@+id/guideline19">
+
+        <ImageView
+            android:layout_marginEnd="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_heart" />
+
+        <ImageView
+            android:layout_marginEnd="10dp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_heart" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_heart" />
+    </LinearLayout>
     <TextView
         android:fontFamily="@font/helveticaneuew23forsky_reg"
 
@@ -260,7 +287,7 @@ android:layoutDirection="rtl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="8dp"
         android:text="10/20"
         android:textColor="#fff"
         android:textSize="20sp"

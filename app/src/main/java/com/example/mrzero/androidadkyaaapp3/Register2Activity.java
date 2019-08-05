@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Register2Activity extends AppCompatActivity {
 
@@ -30,15 +34,10 @@ public class Register2Activity extends AppCompatActivity {
 
         // Get reference of widgets from XML layout
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        List<String> lists=Arrays.asList(getResources().getStringArray(R.array.type_arrays));
+        SpinnerAdapter spinnerAdapter= new com.example.mrzero.androidadkyaaapp3.adapters.SpinnerAdapter(lists,Register2Activity.this);
 
-
-
-        // Initializing an ArrayAdapter
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
-                this,R.layout.row_spinner_item2,getResources().getStringArray(R.array.type_arrays)
-        );
-        spinnerArrayAdapter.setDropDownViewResource(R.layout.row_spinner_item2);
-        spinner.setAdapter(spinnerArrayAdapter);
+         spinner.setAdapter(spinnerAdapter);
 
 
 

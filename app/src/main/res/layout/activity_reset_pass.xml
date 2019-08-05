@@ -55,7 +55,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_mail_icon"
+            android:drawableStart="@drawable/mail"
             android:drawablePadding="7dp"
             android:fontFamily="@font/helveticaneuew23forsky_reg"
 
