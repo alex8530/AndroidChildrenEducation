@@ -137,7 +137,6 @@
                 android:layout_below="@id/textView21"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:fontFamily="@font/helveticaneuew23forsky_reg"
 
                 android:text="الصف الخامس"
                 android:textSize="15sp" />

@@ -141,7 +141,7 @@
             android:drawablePadding="7dp"
             android:hint="البريد الاكتروني"
             android:padding="20dp"
-
+            android:enabled="false"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 

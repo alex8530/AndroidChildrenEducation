@@ -13,11 +13,11 @@
         android:layout_width="101dp"
         android:layout_height="101dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline16"
         app:srcCompat="@drawable/logo_signup" />
 
     <TextView
@@ -37,15 +37,15 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="0dp"
-        android:theme="@style/TextLabe2"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="8dp"
+        android:theme="@style/TextLabe2"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/textView8">
 
         <com.google.android.material.textfield.TextInputEditText
-             android:layout_width="match_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_user_icon"
             android:drawablePadding="7dp"
@@ -58,19 +58,18 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
         android:layout_width="0dp"
-        android:theme="@style/TextLabe2"
         android:layout_height="wrap_content"
+        android:theme="@style/TextLabe2"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-             android:layout_width="match_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/mail"
             android:drawablePadding="7dp"
             android:hint="البريد الاكتروني"
-
             android:padding="20dp"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -110,21 +109,23 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="95" >
+                android:layout_weight="95">
 
                 <com.hbb20.CountryCodePicker
                     android:id="@+id/ccp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:ccpDialog_showFlag="false"
-                    app:ccp_autoDetectCountry="true"
-                    app:ccp_autoDetectLanguage="true"
+                    app:ccp_autoDetectCountry="false"
+                    app:ccp_autoDetectLanguage="false"
                     app:ccp_defaultLanguage="ARABIC"
-                    app:ccp_defaultNameCode="SA"
                     app:ccp_showFullName="true"
                     app:ccp_showNameCode="false"
                     app:ccp_showPhoneCode="false"
-                    app:ccp_textGravity="LEFT" />
+                     app:ccp_showFlag="false"
+                    app:ccp_textSize="14sp"
+                     app:ccp_defaultNameCode="PS"
+
+                    app:ccp_textGravity="RIGHT" />
             </LinearLayout>
 
 
@@ -134,10 +135,10 @@
         <View
 
 
-            android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
             android:layout_marginRight="3dp"
             android:background="@color/gray_light" />
 
@@ -147,8 +148,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
         android:layout_width="0dp"
-        android:theme="@style/TextLabe2"
         android:layout_height="wrap_content"
+        android:theme="@style/TextLabe2"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
@@ -163,31 +164,89 @@
             android:hint="كلمة المرور"
 
             android:inputType="textPassword"
-             android:padding="20dp"
-             android:textSize="15sp" />
+            android:padding="20dp"
+            android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="306dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register"
+        app:srcCompat="@drawable/or" />
+
+    <TextView
+
+        android:id="@+id/textView6"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="الدخول بإستخدام الشبكات الاجتماعية"
+        android:textColor="#070707"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <LinearLayout
+        android:id="@+id/liner_layout_btns"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="50dp"
+            android:src="@drawable/face_icon" />
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/twiter_icon" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="78dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/shape_enter_btn"
-        android:text="تسجيل"
-         android:gravity="center"
+        android:gravity="center"
 
+        android:text="تسجيل"
         android:textColor="@android:color/white"
         android:textSize="16.7sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline4" />
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".13"/>
+        app:layout_constraintGuide_percent=".13" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -195,4 +254,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent=".87" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
 
-        <item name="android:actionMenuTextAppearance">@font/helveticaneuew23forsky_reg</item>
+        <item name="android:actionMenuTextAppearance">@font/cairo_regular</item>
 
         <item name="android:fontFamily">@font/cairo_regular</item>
 
