@@ -40,8 +40,7 @@
 
 
         <TextView
-
-            android:id="@+id/textView15"
+              android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5.3dp"
@@ -72,9 +71,7 @@
         app:srcCompat="@drawable/ic_word_icon" />
 
     <TextView
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
-
-        android:id="@+id/textView16"
+         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="الموقع الالكتروني"
@@ -89,15 +86,13 @@
         android:layout_height="wrap_content"
         android:text="البريد الالكتروني"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
 
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="@+id/imageView14"
         app:layout_constraintTop_toBottomOf="@+id/imageView14" />
 
     <TextView
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
-        android:id="@+id/textView17"
+         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -109,7 +104,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
 
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
@@ -179,8 +173,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_user_icon"
                 android:drawablePadding="7dp"
-                android:fontFamily="@font/helveticaneuew23forsky_reg"
-                  android:hint="الاسم كامل"
+                   android:hint="الاسم كامل"
                 android:singleLine="true"
                 android:padding="15dp"
                 android:textSize="14sp" />
@@ -205,8 +198,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/mail"
                 android:drawablePadding="7dp"
-                android:fontFamily="@font/helveticaneuew23forsky_reg"
-                android:gravity="center_vertical"
+                 android:gravity="center_vertical"
                 android:singleLine="true"
                 android:hint="البريد الاكتروني"
                 android:padding="15dp"
@@ -243,8 +235,7 @@
                     android:id="@+id/txt_message"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/helveticaneuew23forsky_reg"
-                    android:gravity="top|right"
+                     android:gravity="top|right"
                     android:hint="نص الرسالة"
                     android:inputType="textMultiLine"
                     android:lines="8"
@@ -257,12 +248,14 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_weight="6"
 
                 android:src="@drawable/ic_justify" />
 
         </LinearLayout>
+
+
 
         <Button
             android:id="@+id/btn_register"
@@ -275,11 +268,8 @@
             android:layout_marginEnd="28dp"
             android:background="@drawable/shape_enter_btn"
             android:elevation="0dp"
-            android:fontFamily="@font/helveticaneuew23forsky_reg"
-            android:paddingBottom="7dp"
-            android:text="ارسال"
+              android:text="ارسال"
             android:textColor="@android:color/white"
-
 
             android:textSize="16.7sp"
             app:layout_constraintEnd_toEndOf="parent"

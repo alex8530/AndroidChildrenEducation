@@ -37,9 +37,7 @@
                 app:srcCompat="@drawable/ic_reading" />
 
             <TextView
-                android:fontFamily="@font/helveticaneuew23forsky_reg"
-
-                android:id="@+id/textView"
+                   android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -62,7 +60,6 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:fontFamily="@font/helveticaneuew23forsky_reg"
 
                 android:gravity="center"
                 android:text="يمنح الامان للطفل من حيث التعليم لالكتروني ذو الجودة العالية"

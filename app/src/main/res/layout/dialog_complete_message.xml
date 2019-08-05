@@ -21,7 +21,6 @@
         app:srcCompat="@drawable/true_icon" />
 
             <TextView
-                android:fontFamily="@font/helveticaneuew23forsky_reg"
 
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
@@ -44,7 +43,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
 
         android:layout_marginEnd="32dp"
         android:layout_marginTop="8dp"
@@ -65,7 +63,6 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
 
         android:layout_marginBottom="8dp"
         android:background="#2EE2B1"

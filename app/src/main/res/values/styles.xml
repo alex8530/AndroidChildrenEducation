@@ -10,6 +10,7 @@
 
         <item name="android:actionMenuTextAppearance">@font/helveticaneuew23forsky_reg</item>
 
+        <item name="android:fontFamily">@font/cairo_regular</item>
 
         <!--this is for animation-->
         <item name="android:windowContentTransitions">true</item>

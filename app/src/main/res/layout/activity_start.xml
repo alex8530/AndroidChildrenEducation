@@ -50,7 +50,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:background="@null"
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
 
         android:text="تخطي"
 

@@ -21,7 +21,6 @@
         app:srcCompat="@drawable/logo_signup" />
 
     <TextView
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
 
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
@@ -51,7 +50,6 @@
             android:drawableStart="@drawable/ic_user_icon"
             android:drawablePadding="7dp"
             android:hint="الاسم كامل"
-            android:fontFamily="@font/helveticaneuew23forsky_reg"
 
             android:padding="20dp"
             android:textSize="14sp" />
@@ -72,7 +70,6 @@
             android:drawableStart="@drawable/mail"
             android:drawablePadding="7dp"
             android:hint="البريد الاكتروني"
-             android:fontFamily="@font/helveticaneuew23forsky_reg"
 
             android:padding="20dp"
             android:textSize="14sp" />
@@ -164,7 +161,6 @@
             android:drawableStart="@drawable/ic_locked_icon"
             android:drawablePadding="7dp"
             android:hint="كلمة المرور"
-             android:fontFamily="@font/helveticaneuew23forsky_reg"
 
             android:inputType="textPassword"
              android:padding="20dp"
@@ -178,9 +174,7 @@
         android:layout_marginBottom="78dp"
         android:background="@drawable/shape_enter_btn"
         android:text="تسجيل"
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
-        android:gravity="center"
-        android:paddingBottom="7dp"
+         android:gravity="center"
 
         android:textColor="@android:color/white"
         android:textSize="16.7sp"

@@ -40,8 +40,6 @@
 
     <TextView
 
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
-
         android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

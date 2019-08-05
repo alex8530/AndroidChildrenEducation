@@ -76,7 +76,7 @@
 
 
         <TextView
-            android:fontFamily="@font/helveticaneuew23forsky_reg"
+
 
             android:id="@+id/textView28"
             android:layout_width="wrap_content"
@@ -129,7 +129,7 @@
             android:layout_marginTop="18dp"
             android:text="جمع"
 
-            android:fontFamily="@font/helveticaneuew23forsky_reg"
+
             android:textColor="#95989a"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline17"
@@ -176,8 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:text="طرح"
-            android:fontFamily="@font/helveticaneuew23forsky_reg"
-            android:textColor="#95989a"
+             android:textColor="#95989a"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline17"
             app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />

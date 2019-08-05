@@ -85,7 +85,6 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="52dp"
-        android:fontFamily="@font/helveticaneuew23forsky_reg"
 
         android:textSize="17sp"
         android:layout_marginStart="8dp"
