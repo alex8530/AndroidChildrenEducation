@@ -138,6 +138,8 @@
 
         <View
 
+
+            android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginLeft="3dp"
@@ -174,15 +176,16 @@
     <Button
         android:id="@+id/btn_register"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="78dp"
         android:background="@drawable/shape_enter_btn"
         android:text="تسجيل"
         android:fontFamily="@font/helveticaneuew23forsky_reg"
+        android:gravity="center"
         android:paddingBottom="7dp"
 
         android:textColor="@android:color/white"
-        android:textSize="17sp"
+        android:textSize="16.7sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4" />

@@ -70,8 +70,7 @@ public class ChalengeFragment extends Fragment {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                Toast.makeText(getActivity(), "11", Toast.LENGTH_SHORT).show();
-                btn1.setTextColor(getResources().getColor(R.color.white));
+                 btn1.setTextColor(getResources().getColor(R.color.white));
                 btn2.setTextColor(getResources().getColor(R.color.black));
                 btn3.setTextColor(getResources().getColor(R.color.black));
                 btn4.setTextColor(getResources().getColor(R.color.black));

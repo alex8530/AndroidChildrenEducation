@@ -65,7 +65,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="رياضيات"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline6"
                 app:layout_constraintEnd_toStartOf="@+id/menubar"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -83,7 +83,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:text="أعداد"
-            android:textSize="17sp"
+            android:textColor="#95989a"
+            android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline17"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
@@ -127,9 +128,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:text="جمع"
-            android:textSize="17sp"
-            android:fontFamily="@font/helveticaneuew23forsky_reg"
 
+            android:fontFamily="@font/helveticaneuew23forsky_reg"
+            android:textColor="#95989a"
+            android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline17"
             app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView4" />
         <HorizontalScrollView
@@ -175,8 +177,8 @@
             android:layout_marginTop="18dp"
             android:text="طرح"
             android:fontFamily="@font/helveticaneuew23forsky_reg"
-
-            android:textSize="17sp"
+            android:textColor="#95989a"
+            android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline17"
             app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
         <HorizontalScrollView

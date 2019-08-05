@@ -110,7 +110,6 @@
 
     <TextView
         android:fontFamily="@font/helveticaneuew23forsky_reg"
-
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -195,8 +194,8 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_user_icon"
                 android:drawablePadding="7dp"
-                android:gravity="right"
-                android:hint="الاسم كامل"
+                android:gravity="center_vertical"
+                 android:hint="الاسم كامل"
                 android:fontFamily="@font/helveticaneuew23forsky_reg"
 
                 android:padding="15dp"
@@ -220,10 +219,10 @@
             <com.google.android.material.textfield.TextInputEditText
                  android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_mail_icon"
+                android:drawableRight="@drawable/mail"
                 android:drawablePadding="7dp"
-                android:gravity="right"
-                android:fontFamily="@font/helveticaneuew23forsky_reg"
+                 android:fontFamily="@font/helveticaneuew23forsky_reg"
+                android:gravity="center_vertical"
 
                 android:hint="البريد الاكتروني"
                 android:padding="15dp"
@@ -253,9 +252,9 @@
                 android:drawableRight="@drawable/ic_justify"
                 android:drawablePadding="7dp"
                 android:fontFamily="@font/helveticaneuew23forsky_reg"
+                 android:gravity="center_vertical"
 
-                android:gravity="right"
-                android:hint="نص الرسالة"
+                 android:hint="نص الرسالة"
                 android:padding="15dp"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -273,8 +272,10 @@
             android:background="@drawable/shape_enter_btn"
             android:text="ارسال"
             android:textColor="@android:color/white"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="16.7sp"
+            android:paddingBottom="7dp"
+             app:layout_constraintHorizontal_bias="0.5"
+             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

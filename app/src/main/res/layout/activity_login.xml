@@ -109,9 +109,10 @@
         android:background="@drawable/shape_enter_btn"
         android:text="دخول"
         android:textColor="@android:color/white"
-        android:textSize="14sp"
+        android:textSize="16.7sp"
+        app:layout_constraintHorizontal_bias="0.5"
+
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
