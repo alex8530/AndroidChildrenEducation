@@ -19,21 +19,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         Button btn_register= findViewById(R.id.btn_register);
 
-        //to change the color of sppiner
-
-        // Get reference of widgets from XML layout
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-
-
-
-        // Initializing an ArrayAdapter
-//        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
-//                this,R.layout.row_spinner_item,getResources().getStringArray(R.array.country_arrays)
-//        );
-//        spinnerArrayAdapter.setDropDownViewResource(R.layout.row_spinner_item);
-//        spinner.setAdapter(spinnerArrayAdapter);
-//
-//
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

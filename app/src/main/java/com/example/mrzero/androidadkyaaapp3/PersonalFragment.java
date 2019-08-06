@@ -9,11 +9,13 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.mikhaellopez.circularimageview.CircularImageView;
 
@@ -60,14 +62,6 @@ public class PersonalFragment extends Fragment {
         });
 
 
-        //this is for hide the shadow of the image
-        CircularImageView circularImageView = view.findViewById(R.id.circularImageView);
-        circularImageView.setShadowEnable(false);
-        circularImageView.setShadowRadius(1);
-        circularImageView.setShadowColor(Color.TRANSPARENT);
-        circularImageView.setBackgroundColor(Color.TRANSPARENT);
-        circularImageView.setShadowGravity(CircularImageView.ShadowGravity.CENTER);
-
 
         ImageView notImage= view.findViewById(R.id.imageView9);
         notImage.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +72,36 @@ public class PersonalFragment extends Fragment {
 
             }
         });
+
+//
+        RingProgressBar  progress_bar_1 =  view.findViewById(R.id.progress_bar_1);
+        RingProgressBar  progress_bar_2 =  view.findViewById(R.id.progress_bar_2);
+        RingProgressBar  progress_bar_3 =  view.findViewById(R.id.progress_bar_3);
+        RingProgressBar  progress_bar_4 =  view.findViewById(R.id.progress_bar_4);
+
+        // Set the progress bar's progress
+        progress_bar_1.setProgress(50);
+        progress_bar_2.setProgress(100);
+        progress_bar_3.setProgress(50);
+        progress_bar_4.setProgress(70);
+        progress_bar_1.setOnProgressListener(new RingProgressBar.OnProgressListener()
+        {
+
+            @Override
+            public void progressToComplete()
+            {
+                // Progress reaches the maximum callback default Max value is 100
+                Toast.makeText(getActivity(), "complete", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
+
+
+
+
 
 
 

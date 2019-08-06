@@ -31,17 +31,5 @@ public class Register2Activity extends AppCompatActivity {
             }
         });
 
-
-        // Get reference of widgets from XML layout
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        List<String> lists=Arrays.asList(getResources().getStringArray(R.array.type_arrays));
-        SpinnerAdapter spinnerAdapter= new com.example.mrzero.androidadkyaaapp3.adapters.SpinnerAdapter(lists,Register2Activity.this);
-
-         spinner.setAdapter(spinnerAdapter);
-
-
-
-
-
     }
 }
