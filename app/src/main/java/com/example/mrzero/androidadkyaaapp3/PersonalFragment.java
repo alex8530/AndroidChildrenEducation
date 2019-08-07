@@ -97,15 +97,6 @@ public class PersonalFragment extends Fragment {
 
 
 
-
-
-
-
-
-
-
-
-
         return view;
 
 
