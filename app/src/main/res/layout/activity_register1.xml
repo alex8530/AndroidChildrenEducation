@@ -36,36 +36,50 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
 
-        <TextView
-            android:id="@+id/txt_school"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10"
-            android:textColor="@color/black"
-             android:drawableStart="@drawable/ic_user_icon"
-            android:drawablePadding="7dp"
-            android:hint="الصف الدراسي"
-            android:padding="15dp"
-             android:textSize="14sp" />
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="12dp"
+        android:text="اختر الصف "
+        app:layout_constraintEnd_toEndOf="@+id/txt_school"
+        app:layout_constraintStart_toStartOf="@+id/txt_school"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/txt_school"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:drawableStart="@drawable/ic_user_icon"
+        android:drawablePadding="7dp"
+        android:hint="الصف الدراسي"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
 
     <Button
         android:id="@+id/btn_register"
         android:layout_width="0dp"
-         android:layout_marginStart="48dp"
-        android:layout_marginTop="26dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="48dp"
         android:background="@drawable/shape_register1_btn"
-         android:textColor="#ffffff"
-         android:layout_height="wrap_content"
-         android:textSize="17sp"
         android:text="التالي"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_school" />
 
