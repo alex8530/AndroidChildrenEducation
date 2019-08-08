@@ -36,30 +36,22 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="0dp"
-
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10">
-
-        <com.google.android.material.textfield.TextInputEditText
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txt_school"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_user_icon"
-            android:drawablePadding="5dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            android:textColor="@color/black"
+             android:drawableStart="@drawable/ic_user_icon"
+            android:drawablePadding="7dp"
             android:hint="الصف الدراسي"
             android:padding="15dp"
-             android:paddingBottom="7dp"
-
-            android:textSize="14sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+             android:textSize="14sp" />
 
 
     <Button
@@ -71,11 +63,11 @@
         android:background="@drawable/shape_register1_btn"
          android:textColor="#ffffff"
          android:layout_height="wrap_content"
-         android:textSize="16.7sp"
+         android:textSize="17sp"
         android:text="التالي"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_school" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline24"

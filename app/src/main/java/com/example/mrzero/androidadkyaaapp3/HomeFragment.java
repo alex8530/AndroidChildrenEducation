@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 //THIS IS FOR SHOW THE DrawerLayout
                 //because the nav in the activity .. i use this
-                DrawerLayout drawer = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
+                DrawerLayout drawer =getActivity().findViewById(R.id.drawer_layout);
 
                 drawer.openDrawer(GravityCompat.START);
             }

@@ -88,11 +88,11 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_locked_icon"
                 android:drawablePadding="7dp"
-
-                 android:hint="كلمة المرور"
+                android:hint="كلمة المرور"
                 android:inputType="textPassword"
+                android:fontFamily="@font/cairo_regular"
                 android:padding="20dp"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:theme="@style/TextLabe2" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
@@ -106,8 +106,6 @@
         android:text="دخول"
         android:textColor="@android:color/white"
         android:textSize="16.7sp"
-        app:layout_constraintHorizontal_bias="0.5"
-
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />

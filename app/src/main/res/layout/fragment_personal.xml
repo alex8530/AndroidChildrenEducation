@@ -144,6 +144,7 @@
 
             <TextView
 
+
                 android:id="@+id/textView21"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -151,7 +152,7 @@
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
                 android:text="علاء الحلبي"
-                android:textColor="#172735"
+                android:textColor="#172735"       android:layout_marginTop="202dp"
                 android:textSize="16.7sp" />
 
             <TextView
@@ -161,7 +162,7 @@
                 android:layout_below="@id/textView21"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-
+                android:layout_marginTop="1dp"
                 android:text="الصف الخامس"
                 android:textSize="15sp" />
 

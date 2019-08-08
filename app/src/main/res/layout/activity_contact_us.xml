@@ -16,7 +16,6 @@
         android:background="#F6F6F8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
@@ -162,8 +161,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="28dp"
+             android:layout_marginEnd="28dp"
             android:theme="@style/TextLabe2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -173,7 +171,8 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_user_icon"
                 android:drawablePadding="7dp"
-                   android:hint="الاسم كامل"
+                android:hint="الاسم كامل"
+                android:fontFamily="@font/cairo_regular"
                 android:singleLine="true"
                 android:padding="15dp"
                 android:textSize="14sp" />
@@ -185,8 +184,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="28dp"
+             android:layout_marginEnd="28dp"
 
             android:theme="@style/TextLabe2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -202,7 +200,6 @@
                 android:singleLine="true"
                 android:hint="البريد الاكتروني"
                 android:padding="15dp"
-
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -213,8 +210,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
              android:weightSum="100"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
+             android:layout_marginRight="15dp"
             app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
             app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
@@ -239,6 +235,8 @@
                     android:hint="نص الرسالة"
                     android:inputType="textMultiLine"
                     android:lines="8"
+                    android:fontFamily="@font/cairo_regular"
+
                     android:maxLength="1000"
                     android:maxLines="30"
                     android:scrollbars="vertical"
@@ -268,7 +266,7 @@
             android:layout_marginEnd="28dp"
             android:background="@drawable/shape_enter_btn"
             android:elevation="0dp"
-              android:text="ارسال"
+            android:text="ارسال"
             android:textColor="@android:color/white"
 
             android:textSize="16.7sp"
