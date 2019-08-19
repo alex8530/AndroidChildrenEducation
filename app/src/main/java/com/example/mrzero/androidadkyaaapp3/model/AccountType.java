@@ -1,4 +1,4 @@
-package com.example.mrzero.androidadkyaaapp3.model.register;
+package com.example.mrzero.androidadkyaaapp3.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

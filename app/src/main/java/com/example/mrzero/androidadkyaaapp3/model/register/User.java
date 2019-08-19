@@ -1,5 +1,6 @@
-package com.example.mrzero.androidadkyaaapp3.model;
+package com.example.mrzero.androidadkyaaapp3.model.register;
 
+import com.example.mrzero.androidadkyaaapp3.model.AccountType;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

@@ -49,7 +49,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/TextLabe2"
-
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="425dp">
 
@@ -92,6 +91,7 @@
                 android:inputType="textPassword"
                 android:fontFamily="@font/cairo_regular"
                 android:padding="20dp"
+                android:gravity="right"
                 android:textSize="15sp"
                 android:theme="@style/TextLabe2" />
         </com.google.android.material.textfield.TextInputLayout>
