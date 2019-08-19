@@ -68,21 +68,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <RadioButton
-            android:id="@+id/radioButton"
-
+            android:id="@+id/class1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:layoutDirection="rtl"
             android:paddingStart="5dp"
-            android:text="الصف الأول"
+            android:text="@string/class1"
             android:textColor="#727272"
             android:textSize="16sp"
             android:theme="@style/MyRaidoButton" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/class2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -90,13 +89,13 @@
 
             android:layoutDirection="rtl"
             android:paddingStart="5dp"
-            android:text="الصف الثاني"
+            android:text="@string/class2"
             android:textColor="#727272"
             android:textSize="16sp"
             android:theme="@style/MyRaidoButton" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/class3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -104,13 +103,13 @@
             android:layoutDirection="rtl"
 
             android:paddingStart="5dp"
-            android:text="الصف الثالث"
+            android:text="@string/class3"
             android:textColor="#727272"
             android:textSize="16sp"
             android:theme="@style/MyRaidoButton" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/class4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -118,13 +117,13 @@
 
             android:layoutDirection="rtl"
             android:paddingStart="5dp"
-            android:text="الصف الرابع"
+            android:text="@string/class4"
             android:textColor="#727272"
             android:textSize="16sp"
             android:theme="@style/MyRaidoButton" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/class5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -132,13 +131,13 @@
             android:layout_weight="1"
             android:layoutDirection="rtl"
             android:paddingStart="5dp"
-            android:text="الصف الخامس"
+            android:text="@string/class5"
             android:textColor="#727272"
             android:textSize="16sp"
             android:theme="@style/MyRaidoButton" />
 
         <RadioButton
-            android:id="@+id/radioButton6"
+            android:id="@+id/class6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -146,7 +145,7 @@
             android:layout_weight="1"
             android:layoutDirection="rtl"
             android:paddingStart="5dp"
-            android:text="الصف السادس"
+            android:text="@string/class6"
             android:textColor="#727272"
             android:textSize="16sp"
             android:theme="@style/MyRaidoButton" />

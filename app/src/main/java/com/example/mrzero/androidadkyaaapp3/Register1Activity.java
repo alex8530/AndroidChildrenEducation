@@ -12,10 +12,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mrzero.androidadkyaaapp3.utils.Common;
+
 public class Register1Activity extends AppCompatActivity {
 
 
     TextView edt_school;
+    Integer id  =  null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +29,15 @@ public class Register1Activity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Register2Activity.class));
-                finish();
+
+                if (id!= null){
+                    Common.classroomId=id;
+                    startActivity(new Intent(getApplicationContext(),Register2Activity.class));
+                    finish();
+                }else {
+                    Toast.makeText(Register1Activity.this, "الرجاء اختيار الصف", Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });
@@ -41,8 +51,6 @@ public class Register1Activity extends AppCompatActivity {
                 showDialog();
             }
         });
-
-
 
     }
 
@@ -75,6 +83,41 @@ public class Register1Activity extends AppCompatActivity {
 
                 RadioButton r = (RadioButton) radio_gruop.getChildAt(idx);
                 String selectedtext = r.getText().toString();
+                int selectedId=r.getId();
+
+
+                //get selected id
+
+                switch (selectedId){
+                    case R.id.class1 :
+                        id = 1;
+                        break;
+
+                    case R.id.class2 :
+                        id = 2;
+                        break;
+
+                    case R.id.class3 :
+                        id = 3;
+                        break;
+
+                    case R.id.class4 :
+                        id = 4;
+                        break;
+
+                    case R.id.class5 :
+                        id = 5;
+                        break;
+
+                    case R.id.class6 :
+                        id = 6;
+                        break;
+
+                   default:
+                       id=null;
+
+                }
+
                 edt_school.setText(selectedtext);
                 dialog.dismiss();
             }

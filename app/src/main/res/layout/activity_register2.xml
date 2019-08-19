@@ -60,6 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10">
 
         <RadioButton
+            android:id="@+id/male"
             android:paddingLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,6 +69,7 @@
         <RadioButton
             android:paddingLeft="20dp"
 
+            android:id="@+id/female"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

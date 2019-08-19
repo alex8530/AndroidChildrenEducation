@@ -35,8 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(getApplicationContext(),Register1Activity.class));
-//                finish();
+
                 sendRgisterRequest();
 
 
@@ -59,9 +58,10 @@ public class RegisterActivity extends AppCompatActivity {
        public void onResponse(Call<ResultRegisterModel> call, Response<ResultRegisterModel> response) {
            if (response.isSuccessful()){
 
-//              Toast.makeText(RegisterActivity.this, response.body().getData().getApiToken(), Toast.LENGTH_SHORT).show();
              Toast.makeText(RegisterActivity.this, "تمت عملية التسجيل بنجاح !", Toast.LENGTH_SHORT).show();
-               
+               startActivity(new Intent(getApplicationContext(),Register1Activity.class));
+                finish();
+
            }else {
                Toast.makeText(RegisterActivity.this,
                        "البيانات المدخلة غير صالحة", Toast.LENGTH_SHORT).show();

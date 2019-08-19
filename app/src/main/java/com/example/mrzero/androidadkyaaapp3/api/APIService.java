@@ -17,4 +17,11 @@ public interface APIService {
             @Field("email") String email,
             @Field("country") String country,
             @Field("password") String password);
+
+
+    @FormUrlEncoded
+    @POST("login")
+    Call<ResultLoginModel> loginUser(
+             @Field("email") String email,
+             @Field("password") String password);
 }
