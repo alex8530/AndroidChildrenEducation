@@ -23,11 +23,9 @@ public class Common {
     public static User retrieveUserDataPreferance(Context context   ){
         SharedPreferences mPrefs = context.getSharedPreferences("preferanceFileUser",MODE_PRIVATE);
 
-        SharedPreferences.Editor prefsEditor = mPrefs.edit();
         Gson gson = new Gson();
         String json = mPrefs.getString(KEY_USER_PREF, "");
-        User obj = gson.fromJson(json, User.class  );
-        return obj;
+        return  gson.fromJson(json, User.class  );
     }
 
 

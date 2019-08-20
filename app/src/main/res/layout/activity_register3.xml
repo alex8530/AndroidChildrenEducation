@@ -54,7 +54,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/pick_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="2dp"

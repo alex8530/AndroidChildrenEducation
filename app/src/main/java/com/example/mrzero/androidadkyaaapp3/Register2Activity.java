@@ -3,10 +3,16 @@ package com.example.mrzero.androidadkyaaapp3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -15,11 +21,18 @@ import android.widget.Toast;
 
 import com.example.mrzero.androidadkyaaapp3.utils.Common;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
 public class Register2Activity extends AppCompatActivity {
+
     Integer id  =  null;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +41,8 @@ public class Register2Activity extends AppCompatActivity {
 
         Button btn_register= findViewById(R.id.btn_register);
         final RadioGroup radio_gruop =   findViewById(R.id.radioGroup);
+
+
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,4 +91,7 @@ public class Register2Activity extends AppCompatActivity {
         });
 
     }
+
+
+
 }
