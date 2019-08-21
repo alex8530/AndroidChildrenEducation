@@ -1,5 +1,6 @@
 package com.example.mrzero.androidadkyaaapp3.api;
 
+import com.example.mrzero.androidadkyaaapp3.model.country.ResultCountryModel;
 import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
 import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
 import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
@@ -54,5 +55,8 @@ public interface APIService {
     @GET("educational/material")
     Call<ResultGetMaterial> getMaterial();
 
+
+    @GET("general/countries")
+    Call<ResultCountryModel> getAllCountry();
 
 }
