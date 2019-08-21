@@ -16,7 +16,11 @@ import android.widget.Toast;
 
 import com.example.mrzero.androidadkyaaapp3.api.APIService;
 import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
+import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
+import com.example.mrzero.androidadkyaaapp3.model.login.User;
+import com.example.mrzero.androidadkyaaapp3.model.register.Data;
 import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
+ import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -58,7 +62,22 @@ public class RegisterActivity extends AppCompatActivity {
        public void onResponse(Call<ResultRegisterModel> call, Response<ResultRegisterModel> response) {
            if (response.isSuccessful()){
 
-             Toast.makeText(RegisterActivity.this, "تمت عملية التسجيل بنجاح !", Toast.LENGTH_SHORT).show();
+               // save token and data of user
+
+               Data  data= response.body().getData() ;
+
+               CurrentUserSaved userSaved= new CurrentUserSaved();
+               userSaved.setIsLogin(true);
+              userSaved.setRememberToken(data.getApiToken());
+               userSaved.setName(data.getUser().getName());
+               userSaved.setEmail(data.getUser().getEmail());
+               userSaved.setId(data.getUser().getId());
+
+               //save user to referance
+               Common.saveUserDataPreferance(getApplicationContext(),userSaved);
+
+
+                Toast.makeText(RegisterActivity.this, "تمت عملية التسجيل بنجاح !", Toast.LENGTH_SHORT).show();
                startActivity(new Intent(getApplicationContext(),Register1Activity.class));
                 finish();
 

@@ -30,10 +30,6 @@ public class Register2Activity extends AppCompatActivity {
 
     Integer id  =  null;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

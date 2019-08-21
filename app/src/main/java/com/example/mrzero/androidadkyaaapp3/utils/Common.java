@@ -3,8 +3,11 @@ package com.example.mrzero.androidadkyaaapp3.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
 import com.example.mrzero.androidadkyaaapp3.model.login.User;
 import com.google.gson.Gson;
+
+import java.io.File;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -31,7 +34,6 @@ public class Common {
 
     public static  Integer classroomId=null;
     public static  Integer genderId=null;
-
 
 
 

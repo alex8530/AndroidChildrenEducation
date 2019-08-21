@@ -25,16 +25,19 @@ import android.widget.Toast;
 
 import com.example.mrzero.androidadkyaaapp3.api.APIService;
 import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
+import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
 import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
 import com.example.mrzero.androidadkyaaapp3.model.login.User;
 import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
 import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.io.IOException;
+
 public class LoginActivity extends AppCompatActivity {
     TextInputEditText edt_mail, edt_pass;
     private static final String TAG = "LoginActivity";
-
+   static String token;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +64,9 @@ public class LoginActivity extends AppCompatActivity {
         btn_forget_pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),RestorPassActivity.class));
+//                startActivity(new Intent(getApplicationContext(),RestorPassActivity.class));
+
+                getMaterial(token);
             }
         });
 
@@ -80,27 +85,32 @@ public class LoginActivity extends AppCompatActivity {
 
     private void sendLoginRequest() {
         APIService apiService=  ServiceGenerator.createService(APIService.class);
+//        Call<ResultLoginModel> call =  apiService.loginUser(
+//                 edt_mail.getText().toString(),
+//                 edt_pass.getText().toString()
+//        );
         Call<ResultLoginModel> call =  apiService.loginUser(
-                 edt_mail.getText().toString(),
-                 edt_pass.getText().toString()
+                "test101@test.com",
+               "123456"
         );
-
         call.enqueue(new Callback<ResultLoginModel>() {
             @Override
             public void onResponse(Call<ResultLoginModel> call, Response<ResultLoginModel> response) {
                 if (response.isSuccessful()){
 
-                     Toast.makeText(LoginActivity.this, "تمت عملية الدخول بنجاح !", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(LoginActivity.this, "تمت عملية الدخول بنجاح !"+response.body().getData().getApiToken(), Toast.LENGTH_SHORT).show();
 
                      //SAVE USER DATA WITH TOKEN
-                    String token= response.body().getData().getApiToken();
+                      token= response.body().getData().getApiToken();
                     User userLogin= new User();
                     userLogin.setRememberToken(token);
                     //todo add isLoginLocal to user to know is login or not
                     Common.saveUserDataPreferance(getApplicationContext(),userLogin);
 
-                    Intent  intent =new Intent(getApplicationContext(), HomeActivity.class);
-                    startActivity(intent);
+
+//                    Intent  intent =new Intent(getApplicationContext(), HomeActivity.class);
+//                    startActivity(intent);
+
 
 
                 }else {
@@ -116,6 +126,32 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    private void getMaterial(final String token) {
 
+        APIService apiService= ServiceGenerator.createService
+                (APIService.class,token );
+        Call<ResultGetMaterial> call =  apiService.getMaterial();
+        call.enqueue(new Callback<ResultGetMaterial>() {
+            @Override
+            public void onResponse(Call<ResultGetMaterial> call, Response<ResultGetMaterial> response) {
+                if (response.isSuccessful()){
+                    Toast.makeText(  getApplicationContext(), "this is suc"+response.body().getData().get(0).getDescription(), Toast.LENGTH_SHORT).show();
+                }else {
+                    try {
+                        Toast.makeText(getApplicationContext(), "not suc"+response.errorBody().string()+token, Toast.LENGTH_SHORT).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResultGetMaterial> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Fail" + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
 }
 

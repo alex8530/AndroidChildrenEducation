@@ -19,6 +19,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.example.mrzero.androidadkyaaapp3.utils.Common;
 
 
 public class HomeFragment extends Fragment {
@@ -55,7 +58,8 @@ public class HomeFragment extends Fragment {
 
         // Inflate the layout for this fragment
        View view=  inflater.inflate(R.layout.fragment_home, container, false);
-
+        TextView tv_name= view.findViewById(R.id.tv_name);
+        tv_name.setText(Common.retrieveUserDataPreferance(getActivity().getApplicationContext()).getName());
         //  I do the next because i need to show the nav when click in image icon , and click on fragment itself
          LinearLayout challange_layout= view.findViewById(R.id.challange_layout);
         challange_layout.setOnClickListener(new View.OnClickListener() {
