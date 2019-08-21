@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
-import com.example.mrzero.androidadkyaaapp3.model.login.User;
+
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -14,7 +14,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class Common {
     public static final String KEY_USER_PREF="USER_KEY";
 
-    public static void saveUserDataPreferance(Context context, User user){
+    public static void saveUserDataPreferance(Context context, CurrentUserSaved user){
         SharedPreferences mPrefs = context.getSharedPreferences("preferanceFileUser",MODE_PRIVATE);
 
         SharedPreferences.Editor prefsEditor = mPrefs.edit();
@@ -23,12 +23,12 @@ public class Common {
         prefsEditor.putString(KEY_USER_PREF, json);
         prefsEditor.apply();
     }
-    public static User retrieveUserDataPreferance(Context context   ){
+    public static CurrentUserSaved retrieveUserDataPreferance(Context context   ){
         SharedPreferences mPrefs = context.getSharedPreferences("preferanceFileUser",MODE_PRIVATE);
 
         Gson gson = new Gson();
         String json = mPrefs.getString(KEY_USER_PREF, "");
-        return  gson.fromJson(json, User.class  );
+        return  gson.fromJson(json, CurrentUserSaved.class  );
     }
 
 

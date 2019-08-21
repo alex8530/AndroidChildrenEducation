@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
 import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.google.android.material.navigation.NavigationView;
 
@@ -41,7 +42,6 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
 
 
     }
@@ -112,6 +112,10 @@ public class HomeActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_sgin_out) {
+            //clear token and data
+            CurrentUserSaved userSaved= new CurrentUserSaved();
+            userSaved.setIsLogin(false);
+            Common.saveUserDataPreferance(getApplicationContext(),userSaved);
             startActivity(new Intent(getApplicationContext(), Login1Activity.class));
             finish();
         }

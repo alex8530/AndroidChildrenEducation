@@ -25,9 +25,11 @@ import android.widget.Toast;
 
 import com.example.mrzero.androidadkyaaapp3.api.APIService;
 import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
+import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
 import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
 import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
 import com.example.mrzero.androidadkyaaapp3.model.login.User;
+import com.example.mrzero.androidadkyaaapp3.model.register.Data;
 import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
 import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.google.android.material.textfield.TextInputEditText;
@@ -78,38 +80,38 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
-
-
     }
 
     private void sendLoginRequest() {
         APIService apiService=  ServiceGenerator.createService(APIService.class);
-//        Call<ResultLoginModel> call =  apiService.loginUser(
-//                 edt_mail.getText().toString(),
-//                 edt_pass.getText().toString()
-//        );
         Call<ResultLoginModel> call =  apiService.loginUser(
-                "test101@test.com",
-               "123456"
+                 edt_mail.getText().toString(),
+                 edt_pass.getText().toString()
         );
+
         call.enqueue(new Callback<ResultLoginModel>() {
             @Override
             public void onResponse(Call<ResultLoginModel> call, Response<ResultLoginModel> response) {
                 if (response.isSuccessful()){
 
-                     Toast.makeText(LoginActivity.this, "تمت عملية الدخول بنجاح !"+response.body().getData().getApiToken(), Toast.LENGTH_SHORT).show();
+                     Toast.makeText(LoginActivity.this, "تمت عملية تسجيل الدخول بنجاح !" , Toast.LENGTH_SHORT).show();
 
                      //SAVE USER DATA WITH TOKEN
-                      token= response.body().getData().getApiToken();
-                    User userLogin= new User();
-                    userLogin.setRememberToken(token);
-                    //todo add isLoginLocal to user to know is login or not
-                    Common.saveUserDataPreferance(getApplicationContext(),userLogin);
+
+                    com.example.mrzero.androidadkyaaapp3.model.login.Data data= response.body().getData() ;
+
+                    CurrentUserSaved userSaved= new CurrentUserSaved();
+                    userSaved.setIsLogin(true);
+                    userSaved.setRememberToken(data.getApiToken());
+                    userSaved.setName(data.getUser().getName());
+                    userSaved.setEmail(data.getUser().getEmail());
+                    userSaved.setId(data.getUser().getId());
+
+                     Common.saveUserDataPreferance(getApplicationContext(),userSaved);
 
 
-//                    Intent  intent =new Intent(getApplicationContext(), HomeActivity.class);
-//                    startActivity(intent);
+                    Intent  intent =new Intent(getApplicationContext(), HomeActivity.class);
+                    startActivity(intent);
 
 
 

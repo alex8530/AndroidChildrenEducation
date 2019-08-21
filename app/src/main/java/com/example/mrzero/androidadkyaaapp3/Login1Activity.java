@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.mrzero.androidadkyaaapp3.utils.Common;
+
 public class Login1Activity extends AppCompatActivity {
 
     @Override
@@ -26,8 +28,14 @@ public class Login1Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+            //check if user has login current !!
+                if (Common.retrieveUserDataPreferance(getApplicationContext()).isLogin()){
+                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                }else {
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
+                }
 
             }
         });
