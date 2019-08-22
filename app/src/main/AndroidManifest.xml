@@ -34,7 +34,6 @@
         <activity android:name=".WhoAreWeActivity" />
         <activity android:name=".ContactUsActivity" />
         <activity android:name=".MatrialActivity" />
-        <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".HomeActivity" />
     </application>
 

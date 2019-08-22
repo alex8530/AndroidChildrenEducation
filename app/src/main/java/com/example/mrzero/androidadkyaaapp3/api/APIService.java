@@ -15,6 +15,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 
@@ -63,5 +64,12 @@ public interface APIService {
     @FormUrlEncoded
     @POST("password/forget")
     Call<ResultForgetPassword> getForgetPassword(@Field("email") String email);
+
+
+    @FormUrlEncoded
+    @PATCH("password")
+    Call<ResponseBody> changePassword(@Field("old_password") String old_password,
+                                              @Field("password") String password,
+                                              @Field("password_confirmation") String password_confirmation);
 
 }

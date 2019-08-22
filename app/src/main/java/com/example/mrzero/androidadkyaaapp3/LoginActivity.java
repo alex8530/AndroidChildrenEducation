@@ -126,7 +126,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<ResultLoginModel> call, Throwable t) {
                 Toast.makeText(LoginActivity.this,
-                        "حدث خطأ بالاتصال ..", Toast.LENGTH_SHORT).show();
+                        "البيانات المدخلة غير صالحة", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.example.mrzero.androidadkyaaapp3;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -48,6 +49,15 @@ public class EditPersonalFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_edit_personal, container, false);
+
+        TextView tv_change_pass= view.findViewById(R.id.tv_change_pass);
+        tv_change_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                HomeActivity.replaceFragmentFromActivity(ChangePasswordFragment.getInstance());
+            }
+        });
         changeStatusBarColor();
 
 
