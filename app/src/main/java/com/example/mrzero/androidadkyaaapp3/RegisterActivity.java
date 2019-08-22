@@ -182,6 +182,7 @@ public class RegisterActivity extends AppCompatActivity implements MyItemListene
                     }
                 }
 
+
                 @Override
                 public void onFailure(Call<ResultRegisterModel> call, Throwable t) {
                     Toast.makeText(RegisterActivity.this,
@@ -189,13 +190,13 @@ public class RegisterActivity extends AppCompatActivity implements MyItemListene
                 }
             });
         }
-
  }
 
     @Override
     public void onClickItem(int position) {
-          selectedCountry=listCountry.get(position);
+        selectedCountry=listCountry.get(position);
         Toast.makeText(this, ""+selectedCountry.getName(), Toast.LENGTH_SHORT).show();
+        txt_country.setText(selectedCountry.getName());
         dialog.dismiss();
     }
 }

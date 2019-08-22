@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.example.mrzero.androidadkyaaapp3.api.APIService;
 import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
 import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
+import com.example.mrzero.androidadkyaaapp3.model.forgetpassword.ResultForgetPassword;
 import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
 import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
 import com.example.mrzero.androidadkyaaapp3.model.login.User;
@@ -48,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Button btn_enter= findViewById(R.id.btn_register);
-        TextView btn_forget_pass= findViewById(R.id.txt_forget_pass);
+        TextView tv_forget_pass= findViewById(R.id.txt_forget_pass);
         LinearLayout liner_layout_btns= findViewById(R.id.liner_layout_btns);
 
         edt_mail= findViewById(R.id.edt_mail);
@@ -63,12 +64,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btn_forget_pass.setOnClickListener(new View.OnClickListener() {
+        tv_forget_pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(getApplicationContext(),RestorPassActivity.class));
+             startActivity(new Intent(getApplicationContext(),RestorPassActivity.class));
 
-                getMaterial(token);
+
             }
         });
 
@@ -81,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
 
     private void sendLoginRequest() {
         APIService apiService=  ServiceGenerator.createService(APIService.class);

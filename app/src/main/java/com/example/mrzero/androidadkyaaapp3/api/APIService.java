@@ -1,6 +1,7 @@
 package com.example.mrzero.androidadkyaaapp3.api;
 
 import com.example.mrzero.androidadkyaaapp3.model.country.ResultCountryModel;
+import com.example.mrzero.androidadkyaaapp3.model.forgetpassword.ResultForgetPassword;
 import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
 import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
 import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
@@ -12,7 +13,6 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -58,5 +58,10 @@ public interface APIService {
 
     @GET("general/countries")
     Call<ResultCountryModel> getAllCountry();
+
+
+
+    @POST("password/forget")
+    Call<ResultForgetPassword> getForgetPassword(@Field("email") String email);
 
 }
