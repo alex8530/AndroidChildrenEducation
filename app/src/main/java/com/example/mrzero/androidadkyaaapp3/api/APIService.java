@@ -60,7 +60,7 @@ public interface APIService {
     Call<ResultCountryModel> getAllCountry();
 
 
-
+    @FormUrlEncoded
     @POST("password/forget")
     Call<ResultForgetPassword> getForgetPassword(@Field("email") String email);
 

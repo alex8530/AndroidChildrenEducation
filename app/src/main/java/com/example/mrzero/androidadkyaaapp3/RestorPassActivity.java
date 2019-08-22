@@ -6,6 +6,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.mrzero.androidadkyaaapp3.api.APIService;
@@ -18,21 +21,35 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class RestorPassActivity extends AppCompatActivity {
-
+    TextInputEditText edt_email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_pass);
 
-        TextInputEditText edt_email= findViewById(R.id.edt_email);
-        String email= Objects.requireNonNull(edt_email.getText()).toString();
-        sendForgetPassword(email);
+          edt_email= findViewById(R.id.edt_email);
+        Button btn_resetPass= findViewById(R.id.btn_resetPass);
+        btn_resetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = edt_email.getText().toString();
+
+                if (!TextUtils.isEmpty(email)){
+                    sendForgetPasswordRequest(email);
+
+                }else {
+                    Toast.makeText(RestorPassActivity.this, "الرجاء كتابة الإيميل بشكل صحيح", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
 
 
     }
 
 
-    private void sendForgetPassword(String email) {
+    private void sendForgetPasswordRequest(String email) {
         APIService apiService=  ServiceGenerator.createService(APIService.class);
         Call<ResultForgetPassword> call =  apiService.getForgetPassword(email);
         call.enqueue(new Callback<ResultForgetPassword>() {
@@ -41,17 +58,14 @@ public class RestorPassActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     Toast.makeText(RestorPassActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }else {
-                    try {
-                        Toast.makeText(RestorPassActivity.this, response.errorBody().string(), Toast.LENGTH_SHORT).show();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                     Toast.makeText(RestorPassActivity.this, "يرجى التأكد من البريد الالكتروني", Toast.LENGTH_SHORT).show();
+
                 }
             }
 
             @Override
             public void onFailure(Call<ResultForgetPassword> call, Throwable t) {
-                Toast.makeText(RestorPassActivity.this, "غير قادر على الإتصال..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RestorPassActivity.this, "غير قادر على الإتصال..يرجى التأكد من البريد الالكتروني", Toast.LENGTH_SHORT).show();
             }
         });
     }
