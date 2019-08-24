@@ -1,4 +1,4 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.fragments;
 
 import android.Manifest;
 import android.app.Activity;
@@ -23,7 +23,6 @@ import id.zelory.compressor.Compressor;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -42,6 +41,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mrzero.androidadkyaaapp3.R;
 import com.example.mrzero.androidadkyaaapp3.adapters.CountryAdapter;
 import com.example.mrzero.androidadkyaaapp3.api.APIService;
 import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
@@ -49,10 +49,8 @@ import com.example.mrzero.androidadkyaaapp3.listener.MyItemListener;
 import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
 import com.example.mrzero.androidadkyaaapp3.model.country.Country;
 import com.example.mrzero.androidadkyaaapp3.model.country.ResultCountryModel;
-import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
-import com.example.mrzero.androidadkyaaapp3.model.login.User;
-import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
 import com.example.mrzero.androidadkyaaapp3.model.updateuser.ResultUpdateUser;
+import com.example.mrzero.androidadkyaaapp3.ui.activites.HomeActivity;
 import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.google.android.material.textfield.TextInputEditText;
 import com.squareup.picasso.Picasso;

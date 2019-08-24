@@ -1,4 +1,4 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.activites;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mrzero.androidadkyaaapp3.R;
 import com.example.mrzero.androidadkyaaapp3.adapters.CountryAdapter;
 import com.example.mrzero.androidadkyaaapp3.api.APIService;
 import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
@@ -23,10 +24,9 @@ import com.example.mrzero.androidadkyaaapp3.listener.MyItemListener;
 import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
 import com.example.mrzero.androidadkyaaapp3.model.country.Country;
 import com.example.mrzero.androidadkyaaapp3.model.country.ResultCountryModel;
-import com.example.mrzero.androidadkyaaapp3.model.login.User;
 import com.example.mrzero.androidadkyaaapp3.model.register.Data;
 import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
- import com.example.mrzero.androidadkyaaapp3.utils.Common;
+import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;

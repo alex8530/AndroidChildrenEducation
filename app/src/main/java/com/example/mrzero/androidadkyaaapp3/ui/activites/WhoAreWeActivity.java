@@ -1,7 +1,6 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -13,14 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mrzero.androidadkyaaapp3.R;
 import com.example.mrzero.androidadkyaaapp3.api.APIService;
 import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
 import com.example.mrzero.androidadkyaaapp3.model.aboutus.ResultAboutUs;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-
-import java.io.IOException;
 
 public class WhoAreWeActivity extends AppCompatActivity {
 TextView tv_description;

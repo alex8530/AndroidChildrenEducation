@@ -1,15 +1,14 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import android.app.ActivityOptions;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.mrzero.androidadkyaaapp3.R;
 import com.example.mrzero.androidadkyaaapp3.utils.Common;
 
 public class Login1Activity extends AppCompatActivity {
@@ -34,10 +33,7 @@ public class Login1Activity extends AppCompatActivity {
 
                 }else {
                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-
                 }
-
-
             }
         });
 

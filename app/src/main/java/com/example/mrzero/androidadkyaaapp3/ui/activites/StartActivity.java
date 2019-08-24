@@ -1,4 +1,4 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
@@ -18,6 +18,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.mrzero.androidadkyaaapp3.PrefManager;
+import com.example.mrzero.androidadkyaaapp3.R;
+import com.example.mrzero.androidadkyaaapp3.ui.activites.Login1Activity;
 
 public class StartActivity extends AppCompatActivity {
     private ViewPager viewPager;

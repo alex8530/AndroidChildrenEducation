@@ -1,14 +1,10 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.fragments;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
 import android.view.LayoutInflater;
@@ -17,7 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.mikhaellopez.circularimageview.CircularImageView;
+import com.example.mrzero.androidadkyaaapp3.R;
+import com.example.mrzero.androidadkyaaapp3.ui.activites.HomeActivity;
 
 
 public class PersonalFragment extends Fragment {

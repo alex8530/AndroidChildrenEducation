@@ -1,9 +1,8 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.loader.content.CursorLoader;
 import id.zelory.compressor.Compressor;
 
 import okhttp3.MediaType;
@@ -16,28 +15,20 @@ import retrofit2.Response;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.ActivityOptions;
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.provider.SyncStateContract;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.mrzero.androidadkyaaapp3.R;
 import com.example.mrzero.androidadkyaaapp3.api.APIService;
 import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
 import com.example.mrzero.androidadkyaaapp3.utils.Common;

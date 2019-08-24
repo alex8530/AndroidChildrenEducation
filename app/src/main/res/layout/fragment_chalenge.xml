@@ -8,7 +8,7 @@
         android:background="@drawable/bg1"
         android:orientation="vertical"
         android:weightSum="100"
-        tools:context=".ChalengeFragment">
+        tools:context=".ui.fragments.ChalengeFragment">
 
 
         <!--toolbar-->

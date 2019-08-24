@@ -1,7 +1,9 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.activites;
 
 
 import android.os.Bundle;
+
+import com.example.mrzero.androidadkyaaapp3.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,4 +1,4 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 import retrofit2.Call;
@@ -11,14 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.mrzero.androidadkyaaapp3.R;
 import com.example.mrzero.androidadkyaaapp3.api.APIService;
 import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
 import com.example.mrzero.androidadkyaaapp3.model.forgetpassword.ResultForgetPassword;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
-
-import java.io.IOException;
-import java.util.Objects;
 
 public class RestorPassActivity extends AppCompatActivity {
     TextInputEditText edt_email;
@@ -41,13 +38,10 @@ public class RestorPassActivity extends AppCompatActivity {
                     Toast.makeText(RestorPassActivity.this, "الرجاء كتابة الإيميل بشكل صحيح", Toast.LENGTH_SHORT).show();
                 }
 
-
             }
         });
 
-
     }
-
 
     private void sendForgetPasswordRequest(String email) {
         APIService apiService=  ServiceGenerator.createService(APIService.class);

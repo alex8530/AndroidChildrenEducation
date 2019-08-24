@@ -1,37 +1,24 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.transition.Explode;
-import android.transition.Fade;
-import android.transition.Slide;
-import android.transition.Transition;
-import android.transition.TransitionInflater;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mrzero.androidadkyaaapp3.R;
 import com.example.mrzero.androidadkyaaapp3.api.APIService;
 import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
 import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
-import com.example.mrzero.androidadkyaaapp3.model.forgetpassword.ResultForgetPassword;
 import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
 import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
-import com.example.mrzero.androidadkyaaapp3.model.login.User;
-import com.example.mrzero.androidadkyaaapp3.model.register.Data;
-import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
 import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.google.android.material.textfield.TextInputEditText;
 

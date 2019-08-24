@@ -1,4 +1,4 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.fragments;
 
 
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.example.mrzero.androidadkyaaapp3.R;
+import com.example.mrzero.androidadkyaaapp3.ui.activites.HomeActivity;
 
 
 /**

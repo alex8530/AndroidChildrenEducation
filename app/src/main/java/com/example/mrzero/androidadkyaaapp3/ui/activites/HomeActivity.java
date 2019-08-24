@@ -1,9 +1,14 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.activites;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.example.mrzero.androidadkyaaapp3.ui.fragments.EditPersonalFragment;
+import com.example.mrzero.androidadkyaaapp3.ui.fragments.HomeFragment;
+import com.example.mrzero.androidadkyaaapp3.ui.fragments.MaaterialFragment;
+import com.example.mrzero.androidadkyaaapp3.ui.fragments.PersonalFragment;
+import com.example.mrzero.androidadkyaaapp3.R;
 import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
 import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.google.android.material.navigation.NavigationView;
@@ -16,7 +21,6 @@ import androidx.fragment.app.FragmentManager;
 
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener

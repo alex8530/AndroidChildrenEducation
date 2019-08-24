@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="#4FACFE"
-tools:context=".WhoAreWeActivity">
+tools:context=".ui.activites.WhoAreWeActivity">
 
     <View
         android:id="@+id/view2"

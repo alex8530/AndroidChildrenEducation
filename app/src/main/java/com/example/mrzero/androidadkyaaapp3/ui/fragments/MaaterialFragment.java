@@ -1,7 +1,6 @@
-package com.example.mrzero.androidadkyaaapp3;
+package com.example.mrzero.androidadkyaaapp3.ui.fragments;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.core.view.GravityCompat;
@@ -13,21 +12,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.mrzero.androidadkyaaapp3.R;
+import com.example.mrzero.androidadkyaaapp3.ui.activites.HomeActivity;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NotificationFragment extends Fragment {
+public class MaaterialFragment extends Fragment {
 
 
-    public NotificationFragment() {
+
+    public MaaterialFragment() {
         // Required empty public constructor
     }
-    private static NotificationFragment Instance;
+    private static MaaterialFragment Instance;
 
-    public static NotificationFragment getInstance(){
+    public static MaaterialFragment getInstance(){
         if (Instance==null) {
-            Instance= new NotificationFragment();
+            Instance= new MaaterialFragment();
         }
         return Instance;
     }
@@ -36,7 +39,7 @@ public class NotificationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_notification, container, false);
+        View view =  inflater.inflate(R.layout.fragment_maaterial, container, false);
 
 
         ImageView menubar= view.findViewById(R.id.menubar);
@@ -53,8 +56,14 @@ public class NotificationFragment extends Fragment {
         });
 
 
+        ImageView notImage= view.findViewById(R.id.imageView9);
+        notImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              HomeActivity.replaceFragmentFromActivity(NotificationFragment.getInstance());
 
-
+            }
+        });
         return view;
     }
 
