@@ -108,6 +108,10 @@ public class LoginActivity extends AppCompatActivity {
                     userSaved.setName(data.getUser().getName());
                     userSaved.setEmail(data.getUser().getEmail());
                     userSaved.setId(data.getUser().getId());
+                    userSaved.setClassId(data.getUser().getClassId());
+                    userSaved.setGenderId(data.getUser().getGenderId());
+                    userSaved.setImage(data.getUser().getImage());
+                    userSaved.setCountry_name(data.getUser().getAddress().getCountry().getName());
 
                      Common.saveUserDataPreferance(getApplicationContext(),userSaved);
 
@@ -118,15 +122,17 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 }else {
-                    Toast.makeText(LoginActivity.this,
-                            "البيانات المدخلة غير صالحة", Toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(LoginActivity.this,
+                                "البيانات المدخلة غير صالحة" , Toast.LENGTH_SHORT).show();
+
                 }
             }
 
             @Override
             public void onFailure(Call<ResultLoginModel> call, Throwable t) {
                 Toast.makeText(LoginActivity.this,
-                        "البيانات المدخلة غير صالحة", Toast.LENGTH_SHORT).show();
+                        "يرجى التحقق من الانترنت", Toast.LENGTH_SHORT).show();
             }
         });
     }

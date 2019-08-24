@@ -28,7 +28,14 @@ public class Common {
 
         Gson gson = new Gson();
         String json = mPrefs.getString(KEY_USER_PREF, "");
-        return  gson.fromJson(json, CurrentUserSaved.class  );
+        CurrentUserSaved userSaved=  gson.fromJson(json, CurrentUserSaved.class  );
+        if (userSaved ==null){
+            //that mean no user save before ...
+            return new CurrentUserSaved();
+
+        }else {
+            return userSaved;
+        }
     }
 
 

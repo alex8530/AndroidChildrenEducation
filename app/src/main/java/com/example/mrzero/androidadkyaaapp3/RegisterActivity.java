@@ -36,9 +36,10 @@ public class RegisterActivity extends AppCompatActivity implements MyItemListene
     Button btn_register;
     TextView txt_country;
     Integer id  =  null;
+    RecyclerView mRecyleCountry;
     CountryAdapter countryAdapter;
     ArrayList<Country> listCountry;
-    RecyclerView mRecyleCountry;
+
     AlertDialog dialog;
     AlertDialog.Builder mBuilder;
     Country selectedCountry=null;
@@ -167,6 +168,9 @@ public class RegisterActivity extends AppCompatActivity implements MyItemListene
                         userSaved.setName(data.getUser().getName());
                         userSaved.setEmail(data.getUser().getEmail());
                         userSaved.setId(data.getUser().getId());
+                       //do not save any thing else token.. be i need it in the second activity
+                        //all information must be saved from login class not from here...
+
 
                         //save user to referance
                         Common.saveUserDataPreferance(getApplicationContext(),userSaved);

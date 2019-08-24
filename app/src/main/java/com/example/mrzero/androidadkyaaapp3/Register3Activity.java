@@ -125,7 +125,7 @@ public class Register3Activity extends AppCompatActivity {
                 (APIService.class, Common.retrieveUserDataPreferance(getApplicationContext()).getRememberToken());
 
         /************image*************/
-                // create RequestBody instance from file
+      // create RequestBody instance from file
 
         
         File file=  new File(realPathImage);

@@ -1,46 +1,31 @@
-package com.example.mrzero.androidadkyaaapp3.model.login;
+package com.example.mrzero.androidadkyaaapp3.model.updateuser;
 
 import com.example.mrzero.androidadkyaaapp3.model.AccountType;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class Data {
     @SerializedName("id")
     @Expose
     private Integer id;
     @SerializedName("gender_id")
     @Expose
-    private Integer genderId;
+    private String genderId;
     @SerializedName("provider_id")
     @Expose
-    private Integer providerId;
-
-
+    private Object providerId;
     @SerializedName("provider_type_id")
     @Expose
     private Integer providerTypeId;
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    @SerializedName("address")
-    @Expose
-    private Address address;
-
     @SerializedName("account_type_id")
     @Expose
     private Integer accountTypeId;
     @SerializedName("class_id")
     @Expose
-    private Integer classId;
+    private String classId;
     @SerializedName("username")
     @Expose
-    private String username;
+    private Object username;
     @SerializedName("name")
     @Expose
     private String name;
@@ -49,16 +34,16 @@ public class User {
     private String email;
     @SerializedName("mobile")
     @Expose
-    private Integer mobile;
+    private Object mobile;
     @SerializedName("image")
     @Expose
     private String image;
     @SerializedName("remember_token")
     @Expose
-    private String rememberToken;
+    private Object rememberToken;
     @SerializedName("birth_date")
     @Expose
-    private String birthDate;
+    private Object birthDate;
     @SerializedName("is_updated")
     @Expose
     private Integer isUpdated;
@@ -73,7 +58,7 @@ public class User {
     private Integer generatedGroupId;
     @SerializedName("end_at")
     @Expose
-    private String endAt;
+    private Object endAt;
     @SerializedName("created_at")
     @Expose
     private String createdAt;
@@ -82,7 +67,7 @@ public class User {
     private String updatedAt;
     @SerializedName("deleted_at")
     @Expose
-    private String deletedAt;
+    private Object deletedAt;
     @SerializedName("total_time")
     @Expose
     private String totalTime;
@@ -103,13 +88,13 @@ public class User {
     private Boolean isTrial;
     @SerializedName("end_date")
     @Expose
-    private String endDate;
+    private Object endDate;
+    @SerializedName("address")
+    @Expose
+    private Address address;
     @SerializedName("account_type")
     @Expose
     private AccountType accountType;
-
-    public User() {
-    }
 
     public Integer getId() {
         return id;
@@ -119,19 +104,19 @@ public class User {
         this.id = id;
     }
 
-    public Integer getGenderId() {
+    public String getGenderId() {
         return genderId;
     }
 
-    public void setGenderId(Integer genderId) {
+    public void setGenderId(String genderId) {
         this.genderId = genderId;
     }
 
-    public Integer getProviderId() {
+    public Object getProviderId() {
         return providerId;
     }
 
-    public void setProviderId(Integer providerId) {
+    public void setProviderId(Object providerId) {
         this.providerId = providerId;
     }
 
@@ -151,19 +136,19 @@ public class User {
         this.accountTypeId = accountTypeId;
     }
 
-    public Integer getClassId() {
+    public String getClassId() {
         return classId;
     }
 
-    public void setClassId(Integer classId) {
+    public void setClassId(String classId) {
         this.classId = classId;
     }
 
-    public String getUsername() {
+    public Object getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+    public void setUsername(Object username) {
         this.username = username;
     }
 
@@ -183,11 +168,11 @@ public class User {
         this.email = email;
     }
 
-    public Integer getMobile() {
+    public Object getMobile() {
         return mobile;
     }
 
-    public void setMobile(Integer mobile) {
+    public void setMobile(Object mobile) {
         this.mobile = mobile;
     }
 
@@ -199,19 +184,19 @@ public class User {
         this.image = image;
     }
 
-    public String getRememberToken() {
+    public Object getRememberToken() {
         return rememberToken;
     }
 
-    public void setRememberToken(String rememberToken) {
+    public void setRememberToken(Object rememberToken) {
         this.rememberToken = rememberToken;
     }
 
-    public String getBirthDate() {
+    public Object getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(Object birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -247,11 +232,11 @@ public class User {
         this.generatedGroupId = generatedGroupId;
     }
 
-    public String getEndAt() {
+    public Object getEndAt() {
         return endAt;
     }
 
-    public void setEndAt(String endAt) {
+    public void setEndAt(Object endAt) {
         this.endAt = endAt;
     }
 
@@ -271,11 +256,11 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
-    public String getDeletedAt() {
+    public Object getDeletedAt() {
         return deletedAt;
     }
 
-    public void setDeletedAt(String deletedAt) {
+    public void setDeletedAt(Object deletedAt) {
         this.deletedAt = deletedAt;
     }
 
@@ -311,28 +296,36 @@ public class User {
         this.lastWeek = lastWeek;
     }
 
-    public Boolean getPaid() {
+    public Boolean getIsPaid() {
         return isPaid;
     }
 
-    public void setPaid(Boolean paid) {
-        isPaid = paid;
+    public void setIsPaid(Boolean isPaid) {
+        this.isPaid = isPaid;
     }
 
-    public Boolean getTrial() {
+    public Boolean getIsTrial() {
         return isTrial;
     }
 
-    public void setTrial(Boolean trial) {
-        isTrial = trial;
+    public void setIsTrial(Boolean isTrial) {
+        this.isTrial = isTrial;
     }
 
-    public String getEndDate() {
+    public Object getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(Object endDate) {
         this.endDate = endDate;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public AccountType getAccountType() {

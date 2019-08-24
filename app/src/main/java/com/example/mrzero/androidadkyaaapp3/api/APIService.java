@@ -1,15 +1,19 @@
 package com.example.mrzero.androidadkyaaapp3.api;
 
+import com.example.mrzero.androidadkyaaapp3.model.aboutus.ResultAboutUs;
 import com.example.mrzero.androidadkyaaapp3.model.country.ResultCountryModel;
 import com.example.mrzero.androidadkyaaapp3.model.forgetpassword.ResultForgetPassword;
 import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
 import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
+import com.example.mrzero.androidadkyaaapp3.model.login.User;
 import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
+import com.example.mrzero.androidadkyaaapp3.model.updateuser.ResultUpdateUser;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -71,5 +75,24 @@ public interface APIService {
     Call<ResponseBody> changePassword(@Field("old_password") String old_password,
                                               @Field("password") String password,
                                               @Field("password_confirmation") String password_confirmation);
+
+
+
+    //because the return object same as login,, so ResultLoginModel is used
+    @Multipart
+    @POST("student/profile")
+    Call<ResultUpdateUser> UpdateProfile(@Part("name")  RequestBody name,
+                                         @Part("email")  RequestBody email,
+                                         @Part("class_id")  RequestBody class_id,
+                                         @Part("country_id")  RequestBody country_id,
+                                         @Part("gender_id")  RequestBody gender_id,
+                                         @Part  MultipartBody.Part file
+    );
+
+
+    @GET("pages/about-us")
+    Call<ResultAboutUs> getAboutUs();
+
+
 
 }

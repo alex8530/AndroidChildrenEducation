@@ -30,12 +30,13 @@ public class Login1Activity extends AppCompatActivity {
 
             //check if user has login current !!
                 if (Common.retrieveUserDataPreferance(getApplicationContext()).isLogin()){
-                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                   startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 
                 }else {
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                   startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 
                 }
+
 
             }
         });

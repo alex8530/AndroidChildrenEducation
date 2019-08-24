@@ -1,14 +1,35 @@
 package com.example.mrzero.androidadkyaaapp3;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import de.hdodenhof.circleimageview.CircleImageView;
+import id.zelory.compressor.Compressor;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
+import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,14 +42,74 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mrzero.androidadkyaaapp3.adapters.CountryAdapter;
+import com.example.mrzero.androidadkyaaapp3.api.APIService;
+import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
+import com.example.mrzero.androidadkyaaapp3.listener.MyItemListener;
+import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
+import com.example.mrzero.androidadkyaaapp3.model.country.Country;
+import com.example.mrzero.androidadkyaaapp3.model.country.ResultCountryModel;
+import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
+import com.example.mrzero.androidadkyaaapp3.model.login.User;
+import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
+import com.example.mrzero.androidadkyaaapp3.model.updateuser.ResultUpdateUser;
+import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.google.android.material.textfield.TextInputEditText;
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
 
-public class EditPersonalFragment extends Fragment {
-      TextView edt_school;
+public class EditPersonalFragment extends Fragment implements MyItemListener {
+       private TextView  tv_classroom , txt_country ,tv_change_pass;
+   private TextInputEditText edt_name,edt_email;
+   Button btn_save;
+   
+    Integer idOfSelectedRadioBtnClassRoom  =  null;
+    AlertDialog dialog;
+    AlertDialog.Builder mBuilder;
+
+    RadioGroup radioGroupMaleFemale ;
+    RadioButton radioMale ;
+    RadioButton radioFemale ;
+
+    RecyclerView mRecyleCountry;
+    CountryAdapter countryAdapter;
+    ArrayList<Country> listCountry;
+    Country selectedCountry=null;
+    Integer mGenderId=null;
+    String imageUserPath=null;
+    String realPathImageFromDevise;
+
+    String mCountryName =null;
+
+
+
+    CircleImageView profile_image;
+
+
     public EditPersonalFragment() {
         // Required empty public constructor
+
+
     }
+
+    private void requestStoragePermission() {
+        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
+            return;
+
+        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity() , Manifest.permission.READ_EXTERNAL_STORAGE)) {
+            //If the user has denied the permission previously your code will come to this block
+            //Here you can explain why you need this permission
+            //Explain here why you need this permission
+        }
+        //And finally ask for the permission
+        ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 123);
+
+
+}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,9 +130,165 @@ public class EditPersonalFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_edit_personal, container, false);
+        initView(view);
 
-        TextView tv_change_pass= view.findViewById(R.id.tv_change_pass);
-        tv_change_pass.setOnClickListener(new View.OnClickListener() {
+        //Requesting storage permission
+        requestStoragePermission();
+
+        //init adapter
+        countryAdapter = new CountryAdapter(getActivity()  );
+        countryAdapter.setMyItemListener(this);
+        listCountry=  getListCountry();
+
+
+
+        //get previes information before update...
+         getPrevoiusDataDefault();
+
+
+
+        txt_country.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialogCountry();
+            }
+        });
+
+
+        btn_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String name=edt_name.getText().toString();
+                String email=edt_email.getText().toString();
+                mGenderId=  getmGenderIdSlectedFromGenderGruop();
+
+                if (mGenderId==null) {
+               Toast.makeText(getActivity(), "يرجى اختيار نوع الجنس ", Toast.LENGTH_SHORT).show();
+                }
+
+                if (idOfSelectedRadioBtnClassRoom==null) {
+                    Toast.makeText(getActivity(), "يرجى اختيار الصف ", Toast.LENGTH_SHORT).show();
+                }else if (mCountryName==null){
+                Toast.makeText(getActivity(), "يرجى اختيار الدولة ", Toast.LENGTH_SHORT).show();
+                }else if (TextUtils.isEmpty( email)){
+                Toast.makeText(getActivity(), "يرجى كتابة الايميل ", Toast.LENGTH_SHORT).show();
+
+            }  else if (TextUtils.isEmpty( name)){
+                Toast.makeText(getActivity(), "يرجى كتابة الاسم ", Toast.LENGTH_SHORT).show();
+
+             } else{
+                    //get token
+                    String token= Common.retrieveUserDataPreferance(getActivity()).getRememberToken();
+                    APIService apiService=  ServiceGenerator.createService(APIService.class,token);
+
+
+
+                    /************image*************/
+                    // create RequestBody instance from file
+
+                    MultipartBody.Part img=null ;
+                    //because the image not requirdd
+                    if (realPathImageFromDevise!=null){
+                        File file=  new File(realPathImageFromDevise);
+
+                        File compressedImageFile =   compressFile(file);
+                        RequestBody requestFile =
+                                RequestBody.create(
+                                        MediaType.parse("*/*"),
+                                        compressedImageFile
+                                );
+
+                        // MultipartBody.Part is used to send also the actual file name
+                     img =MultipartBody.Part.createFormData("img", file.getName(), requestFile);
+
+                    }
+
+
+
+/************image*************/
+
+
+                    RequestBody classroom =
+                            RequestBody.create(
+                                    okhttp3.MultipartBody.FORM, String.valueOf(idOfSelectedRadioBtnClassRoom));
+
+
+
+                    RequestBody gender =
+                            RequestBody.create(
+                                    okhttp3.MultipartBody.FORM,String.valueOf(mGenderId));
+
+
+
+
+
+                    RequestBody country =
+                            RequestBody.create(
+                                    okhttp3.MultipartBody.FORM, String.valueOf(selectedCountry.getId()));
+
+
+
+                    RequestBody namee =
+                            RequestBody.create(
+                                    okhttp3.MultipartBody.FORM, name);
+
+
+
+                    RequestBody emaill =
+                            RequestBody.create(
+                                    okhttp3.MultipartBody.FORM, email);
+
+
+
+                    Call<ResultUpdateUser>  call= apiService.UpdateProfile(
+                            namee,
+                            emaill,
+                            classroom,
+                            country,
+                            gender,
+                            img);
+
+                call.enqueue(new Callback<ResultUpdateUser>() {
+                    @Override
+                    public void onResponse(Call<ResultUpdateUser> call, Response<ResultUpdateUser> response) {
+                        if (response.isSuccessful()){
+                            Toast.makeText(getActivity(), " تم تحديث بيانات ملفك الشخصي بنجاح", Toast.LENGTH_SHORT).show();
+                        //update user data in local device
+
+//                                //update saved data
+//                                //do not need to save email because it does not change
+
+
+                            //note .. donot update the token!!
+
+                                CurrentUserSaved oldSavedUser=Common.retrieveUserDataPreferance(getActivity());
+                                oldSavedUser.setName(response.body().getData().getName());
+                                oldSavedUser.setClassId(Integer.parseInt(response.body().getData().getClassId()));
+                                oldSavedUser.setGenderId(Integer.parseInt(response.body().getData().getGenderId()));
+                                oldSavedUser.setCountry_name(response.body().getData().getAddress().getCountry().getName());
+                                oldSavedUser.setEmail(response.body().getData().getEmail());
+                                oldSavedUser.setImage(response.body().getData().getImage());
+
+                                Common.saveUserDataPreferance(getActivity(),oldSavedUser);
+                        }else {
+                            Toast.makeText(getActivity(), "لم تتم العملية.. يرجى اختيار صورة أصغر حجما", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResultUpdateUser> call, Throwable t) {
+                        Toast.makeText(getActivity(), "خطأ في الاتصال", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+                }
+            }
+        });
+
+
+
+            tv_change_pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -86,20 +323,234 @@ public class EditPersonalFragment extends Fragment {
         });
 
 
-       edt_school = view.findViewById(R.id.textInputLayout3);
-
-
-        edt_school.setOnClickListener(new View.OnClickListener() {
+        tv_classroom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog();
+                showDialogClassRoom();
             }
-        }); 
+        });
+
+
+
+        profile_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pickFromGallery();
+            }
+        });
+
         return view;
     }
 
+    private void pickFromGallery(){
+        //Create an Intent with action as ACTION_PICK
+        Intent intent=new Intent(Intent.ACTION_PICK);
+        // Sets the type as image/*. This ensures only components of type image are selected
+        intent.setType("image/*");
+        //We pass an extra array with the accepted mime types. This will ensure only components with these MIME types as targeted.
+        String[] mimeTypes = {"image/jpeg", "image/png","image/jpg"};
+        intent.putExtra(Intent.EXTRA_MIME_TYPES,mimeTypes);
+        // Launching the Intent
+        startActivityForResult(intent,100);
+    }
 
-    public void showDialog( ){
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // Result code is RESULT_OK only if the user selects an Image
+        if (resultCode == Activity.RESULT_OK){
+            switch (requestCode){
+                case 100:
+                    //data.getData return the content URI for the selected Image
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                    // Get the cursor
+                    Cursor cursor = getActivity().getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    // Move to first row
+                    cursor.moveToFirst();
+                    //Get the column index of MediaStore.Images.Media.DATA
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    //Gets the String value in the column
+                    realPathImageFromDevise = cursor.getString(columnIndex);
+                    cursor.close();
+                    // Set the Image in ImageView after decoding the String
+                    profile_image.setImageBitmap(BitmapFactory.decodeFile(realPathImageFromDevise));
+
+                    break;
+
+            }
+
+        }
+
+    }
+
+
+    private File compressFile(File file) {
+        File f =null;
+        try {
+            f =  new Compressor(getActivity())
+                    .setMaxWidth(640)
+                    .setMaxHeight(480)
+                    .setQuality(75)
+                    .compressToFile(file);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        return f;
+    }
+
+    private Integer getmGenderIdSlectedFromGenderGruop() {
+        //get selected item from radio gruop
+        int radioButtonID = radioGroupMaleFemale.getCheckedRadioButtonId();
+        View radioButton = radioGroupMaleFemale.findViewById(radioButtonID);
+        int idx = radioGroupMaleFemale.indexOfChild(radioButton);
+
+        RadioButton r = (RadioButton) radioGroupMaleFemale.getChildAt(idx);
+        if (r==null) return null;
+        //get selected id
+        int selectedId=r.getId();
+
+        //get selected id
+
+        switch (selectedId){
+            case R.id.radio_male :
+                mGenderId = 2;
+                break;
+
+            case R.id.radio_fmale :
+                mGenderId = 3;
+                break;
+
+            default:
+                mGenderId=null;
+
+        }
+
+        return mGenderId;
+    }
+
+
+    private void initView( View view ) {
+        tv_classroom = view.findViewById(R.id.tv_classroom);
+        txt_country = view.findViewById(R.id.txt_country);
+        edt_name = view.findViewById(R.id.edt_name);
+        edt_email = view.findViewById(R.id.edt_email);
+        tv_change_pass= view.findViewById(R.id.tv_change_pass);
+        radioGroupMaleFemale=view.findViewById(R.id.radioGroupMaleFemale);
+        radioMale=view.findViewById(R.id.radio_male);
+        radioFemale=view.findViewById(R.id.radio_fmale );
+        btn_save=view.findViewById(R.id.btn_save);
+        profile_image=view.findViewById(R.id.profile_image);
+
+    }
+
+    private void getPrevoiusDataDefault() {
+        edt_email.setText( Common.retrieveUserDataPreferance(getActivity()).getEmail());
+        edt_name.setText( Common.retrieveUserDataPreferance(getActivity()).getName());
+        //todo .. get class and country and gender .. but before that ... store it in share preferance in register and login
+        Integer classid= Common.retrieveUserDataPreferance(getActivity()).getClassId()  ;
+        idOfSelectedRadioBtnClassRoom=classid;
+        //get selected id
+    if (classid!=null){
+     switch (classid){
+        case 1:
+           tv_classroom.setText(R.string.class1);
+            break;
+
+        case 2:
+            tv_classroom.setText(R.string.class2);
+            break;
+
+        case 3:
+            tv_classroom.setText(R.string.class3);
+
+            break;
+
+        case 4:
+            tv_classroom.setText(R.string.class4);
+
+            break;
+
+        case 5:
+            tv_classroom.setText(R.string.class5);
+
+            break;
+
+        case 6:
+            tv_classroom.setText(R.string.class6);
+
+            break;
+
+    }
+}
+
+    Integer genderId= Common.retrieveUserDataPreferance(getActivity()).getGenderId()  ;
+
+    if (genderId!=null){
+
+        if (genderId==2){
+            mGenderId=2;
+            radioMale.setChecked(true);
+        }
+        if (genderId==3){
+            mGenderId=3;
+
+            radioFemale.setChecked(true);
+
+        }
+
+    }
+
+    //get image
+        imageUserPath=Common.retrieveUserDataPreferance(getActivity()).getImage();
+        if (imageUserPath!=null){
+            //set to image src
+            Picasso.get()
+                    .load(imageUserPath)
+                    .into(profile_image);
+
+        }
+
+
+        //get contry
+        mCountryName=Common.retrieveUserDataPreferance(getActivity()).getCountry_name();
+
+        if (mCountryName!=null)
+        txt_country.setText(mCountryName);
+    }
+
+
+    private ArrayList<Country> getListCountry() {
+        final ArrayList<Country>countries = new ArrayList<>();
+        APIService apiService=  ServiceGenerator.createService(APIService.class);
+        Call<ResultCountryModel> call= apiService.getAllCountry();
+        call.enqueue(new Callback<ResultCountryModel>() {
+            @Override
+            public void onResponse(Call<ResultCountryModel> call, Response<ResultCountryModel> response) {
+
+                if (response.isSuccessful()) {
+                    assert response.body() != null;
+                    countries.addAll(response.body().getCountries());
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResultCountryModel> call, Throwable t) {
+                Toast.makeText(getActivity(), "حدث خطأ في الاتصال في السيرفر",  Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        return countries;
+    }
+
+
+    public void showDialogClassRoom( ){
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity()  );
         View mView = getLayoutInflater().inflate(R.layout.my_custom_dailog, null);
 
@@ -109,7 +560,8 @@ public class EditPersonalFragment extends Fragment {
         mBuilder.setView(mView);
         final AlertDialog dialog = mBuilder.create();
         dialog.show();
-        
+
+
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,12 +579,48 @@ public class EditPersonalFragment extends Fragment {
                 int idx = radio_gruop.indexOfChild(radioButton);
 
                 RadioButton r = (RadioButton) radio_gruop.getChildAt(idx);
+                if (r==null) return;
                 String selectedtext = r.getText().toString();
                 Toast.makeText(getActivity(), selectedtext, Toast.LENGTH_SHORT).show();
 
+                //get selected id
+                int selectedId=r.getId();
 
 
-                edt_school.setText(selectedtext);
+                //get selected id
+
+                switch (selectedId){
+                    case R.id.class1 :
+                        idOfSelectedRadioBtnClassRoom = 1;
+                        break;
+
+                    case R.id.class2 :
+                        idOfSelectedRadioBtnClassRoom = 2;
+                        break;
+
+                    case R.id.class3 :
+                        idOfSelectedRadioBtnClassRoom = 3;
+                        break;
+
+                    case R.id.class4 :
+                        idOfSelectedRadioBtnClassRoom = 4;
+                        break;
+
+                    case R.id.class5 :
+                        idOfSelectedRadioBtnClassRoom = 5;
+                        break;
+
+                    case R.id.class6 :
+                        idOfSelectedRadioBtnClassRoom = 6;
+                        break;
+
+                    default:
+                        idOfSelectedRadioBtnClassRoom=null;
+
+                }
+
+                Toast.makeText(getActivity(), idOfSelectedRadioBtnClassRoom+"", Toast.LENGTH_SHORT).show();
+                tv_classroom.setText(selectedtext);
                 dialog.dismiss();
             }
         });
@@ -153,4 +641,29 @@ public class EditPersonalFragment extends Fragment {
         window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.statusbarColor));
     }
 
+    public void showDialogCountry( ){
+        mBuilder = new AlertDialog.Builder(getActivity() );
+        View mView = getLayoutInflater().inflate(R.layout.my_custom_dailog_countries, null);
+        mRecyleCountry=mView.findViewById(R.id.rec_countries);
+        mRecyleCountry.setLayoutManager(new LinearLayoutManager(getActivity() ));
+        mRecyleCountry.setHasFixedSize(true);
+
+        countryAdapter.setmListCountry(listCountry);
+        countryAdapter.notifyDataSetChanged();
+        mRecyleCountry.setAdapter(countryAdapter);
+
+        mBuilder.setView(mView);
+        dialog = mBuilder.create();
+        dialog.show();
+
+    }
+
+    @Override
+    public void onClickItem(int position) {
+        selectedCountry=listCountry.get(position);
+        Toast.makeText(getActivity(), ""+selectedCountry.getName(), Toast.LENGTH_SHORT).show();
+        mCountryName=selectedCountry.getName();
+        txt_country.setText(mCountryName);
+        dialog.dismiss();
+    }
 }
