@@ -113,7 +113,7 @@ public class Register3Activity extends AppCompatActivity {
 
         progressBar.setVisibility(View.VISIBLE);
         APIService apiService= ServiceGenerator.createService
-                (APIService.class, Common.retrieveUserDataPreferance(getApplicationContext()).getRememberToken());
+                (APIService.class, Common.TEMP_REGISTER_TOKEN);
 
         /************image*************/
       // create RequestBody instance from file
@@ -137,8 +137,8 @@ public class Register3Activity extends AppCompatActivity {
 /************image*************/
 
         // add another part within the multipart request
-        String classString = "1";
-        String genderString = "3";
+        String classString = String.valueOf(Common.classroomId);
+        String genderString = String.valueOf(Common.genderId);
 
         RequestBody classroom =
                 RequestBody.create(
@@ -162,7 +162,7 @@ public class Register3Activity extends AppCompatActivity {
                 if (response.isSuccessful()){
                      Toast.makeText(Register3Activity.this, " تم اكمال بيانات ملفك الشخصي بنجاح", Toast.LENGTH_SHORT).show();
 
-                     Intent intent= new Intent(getApplicationContext(),HomeActivity.class);
+                     Intent intent= new Intent(getApplicationContext(),LoginActivity.class);
                     startActivity(intent);
                     finish();
 

@@ -6,21 +6,24 @@ import android.os.Bundle;
 
 import com.example.mrzero.androidadkyaaapp3.ui.fragments.EditPersonalFragment;
 import com.example.mrzero.androidadkyaaapp3.ui.fragments.HomeFragment;
-import com.example.mrzero.androidadkyaaapp3.ui.fragments.MaaterialFragment;
+import com.example.mrzero.androidadkyaaapp3.ui.fragments.MaterialFragment;
 import com.example.mrzero.androidadkyaaapp3.ui.fragments.PersonalFragment;
 import com.example.mrzero.androidadkyaaapp3.R;
 import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
 import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.google.android.material.navigation.NavigationView;
+import com.squareup.picasso.Picasso;
 
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import de.hdodenhof.circleimageview.CircleImageView;
 
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
@@ -28,8 +31,9 @@ public class HomeActivity extends AppCompatActivity
 
 
     //this is init fragment to replace between them
-    Fragment fragment;
+  Fragment fragment;
   static   FragmentManager fragmentManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,15 @@ public class HomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //update header data with image and title from saved user
+
+        View  mHeaderView = navigationView.getHeaderView(0);
+        TextView  mDrawerHeaderTitle =  mHeaderView.findViewById(R.id.textView13);
+        CircleImageView profile_image_header =  mHeaderView.findViewById(R.id.profile_image_header);
+
+        mDrawerHeaderTitle.setText(Common.retrieveUserDataPreferance(this).getName());
+
+        Picasso.get().load(Common.retrieveUserDataPreferance(this).getImage()).into(profile_image_header);
 
     }
 
@@ -60,27 +73,7 @@ public class HomeActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -96,7 +89,7 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_materials_study) {
 
 
-            fragment= MaaterialFragment.getInstance();
+            fragment= MaterialFragment.getInstance();
              fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
         } else if (id == R.id.nav_settings) {
@@ -134,7 +127,7 @@ public class HomeActivity extends AppCompatActivity
 
     }
 
-    public static   void replaceFragmentFromActivity(Fragment fragment){
+    public static void replaceFragmentFromActivity(Fragment fragment){
        fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
     }
 }

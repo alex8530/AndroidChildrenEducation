@@ -42,6 +42,8 @@ public class Common {
     public static  Integer classroomId=null;
     public static  Integer genderId=null;
 
+    public static   String TEMP_REGISTER_TOKEN ;
+
 
 
 }

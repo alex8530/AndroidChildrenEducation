@@ -82,8 +82,7 @@ public class HomeFragment extends Fragment {
         });
 
 
-
-       ImageView menubar= view.findViewById(R.id.menubar);
+        ImageView menubar= view.findViewById(R.id.menubar);
 
         menubar.setOnClickListener(new View.OnClickListener() {
             @Override

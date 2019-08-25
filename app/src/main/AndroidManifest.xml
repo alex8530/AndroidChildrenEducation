@@ -33,7 +33,6 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".ui.activites.WhoAreWeActivity" />
         <activity android:name=".ui.activites.ContactUsActivity" />
-        <activity android:name=".ui.activites.MatrialActivity" />
         <activity android:name=".ui.activites.HomeActivity" />
     </application>
 

@@ -5,6 +5,17 @@ import com.example.mrzero.androidadkyaaapp3.model.login.User;
 public class CurrentUserSaved  extends User {
     private  boolean isLogin=false;
     String country_name;
+    Integer country_id;
+
+    public Integer getCountry_id() {
+        return country_id;
+    }
+
+    public void setCountry_id(Integer country_id) {
+        this.country_id = country_id;
+    }
+
+
 
     public String getCountry_name() {
         return country_name;

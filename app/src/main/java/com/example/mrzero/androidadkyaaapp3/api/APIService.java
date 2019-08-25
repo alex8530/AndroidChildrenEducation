@@ -45,7 +45,7 @@ public interface APIService {
 
 //
     @Multipart
-    @POST("student/profile")
+    @POST("student/complete-profile")
     Call<ResponseBody> completeProfile(
             @Part("class_id") RequestBody class_id,
             @Part("gender_id") RequestBody gender_id,

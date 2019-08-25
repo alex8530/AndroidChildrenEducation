@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/navigation_header_container"
     android:layout_height="@dimen/nav_header_height"
     android:background="@drawable/shape_header"
     android:gravity="bottom"
@@ -26,12 +27,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_image_header" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView
+
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/profile_image"
+        android:id="@+id/profile_image_header"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"

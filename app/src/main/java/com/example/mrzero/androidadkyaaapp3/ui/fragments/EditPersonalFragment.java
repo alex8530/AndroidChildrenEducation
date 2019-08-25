@@ -76,21 +76,16 @@ public class EditPersonalFragment extends Fragment implements MyItemListener {
     RecyclerView mRecyleCountry;
     CountryAdapter countryAdapter;
     ArrayList<Country> listCountry;
-    Country selectedCountry=null;
+    Country mSelectedCountry=new Country();
     Integer mGenderId=null;
     String imageUserPath=null;
     String realPathImageFromDevise;
-
-    String mCountryName =null;
-
-
 
     CircleImageView profile_image;
 
 
     public EditPersonalFragment() {
         // Required empty public constructor
-
 
     }
 
@@ -166,7 +161,7 @@ public class EditPersonalFragment extends Fragment implements MyItemListener {
 
                 if (idOfSelectedRadioBtnClassRoom==null) {
                     Toast.makeText(getActivity(), "يرجى اختيار الصف ", Toast.LENGTH_SHORT).show();
-                }else if (mCountryName==null){
+                }else if (mSelectedCountry.getName()==null){
                 Toast.makeText(getActivity(), "يرجى اختيار الدولة ", Toast.LENGTH_SHORT).show();
                 }else if (TextUtils.isEmpty( email)){
                 Toast.makeText(getActivity(), "يرجى كتابة الايميل ", Toast.LENGTH_SHORT).show();
@@ -222,7 +217,7 @@ public class EditPersonalFragment extends Fragment implements MyItemListener {
 
                     RequestBody country =
                             RequestBody.create(
-                                    okhttp3.MultipartBody.FORM, String.valueOf(selectedCountry.getId()));
+                                    okhttp3.MultipartBody.FORM, String.valueOf(mSelectedCountry.getId()));
 
 
 
@@ -264,12 +259,18 @@ public class EditPersonalFragment extends Fragment implements MyItemListener {
                                 oldSavedUser.setClassId(Integer.parseInt(response.body().getData().getClassId()));
                                 oldSavedUser.setGenderId(Integer.parseInt(response.body().getData().getGenderId()));
                                 oldSavedUser.setCountry_name(response.body().getData().getAddress().getCountry().getName());
+                                oldSavedUser.setCountry_id( response.body().getData().getAddress().getCountry().getId( ));
                                 oldSavedUser.setEmail(response.body().getData().getEmail());
                                 oldSavedUser.setImage(response.body().getData().getImage());
 
                                 Common.saveUserDataPreferance(getActivity(),oldSavedUser);
                         }else {
-                            Toast.makeText(getActivity(), "لم تتم العملية.. يرجى اختيار صورة أصغر حجما", Toast.LENGTH_SHORT).show();
+                            try {
+
+                                Toast.makeText(getActivity(), "لم تتم العملية.. يرجى اختيار صورة أصغر حجما"+response.errorBody().string(), Toast.LENGTH_SHORT).show();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
 
@@ -514,11 +515,13 @@ public class EditPersonalFragment extends Fragment implements MyItemListener {
         }
 
 
-        //get contry
-        mCountryName=Common.retrieveUserDataPreferance(getActivity()).getCountry_name();
+        //restore country info
 
-        if (mCountryName!=null)
-        txt_country.setText(mCountryName);
+        mSelectedCountry.setId(Common.retrieveUserDataPreferance(getActivity()).getCountry_id());
+        mSelectedCountry.setName(Common.retrieveUserDataPreferance(getActivity()).getCountry_name());
+
+        if (mSelectedCountry.getName()!=null)
+        txt_country.setText(mSelectedCountry.getName());
     }
 
 
@@ -658,10 +661,10 @@ public class EditPersonalFragment extends Fragment implements MyItemListener {
 
     @Override
     public void onClickItem(int position) {
-        selectedCountry=listCountry.get(position);
-        Toast.makeText(getActivity(), ""+selectedCountry.getName(), Toast.LENGTH_SHORT).show();
-        mCountryName=selectedCountry.getName();
-        txt_country.setText(mCountryName);
+        mSelectedCountry=listCountry.get(position);
+        Toast.makeText(getActivity(), ""+mSelectedCountry.getName(), Toast.LENGTH_SHORT).show();
+//        mCountryName=mSelectedCountry.getName();
+        txt_country.setText(mSelectedCountry.getName());
         dialog.dismiss();
     }
 }
