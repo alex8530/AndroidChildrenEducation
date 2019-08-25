@@ -663,7 +663,6 @@ public class EditPersonalFragment extends Fragment implements MyItemListener {
     public void onClickItem(int position) {
         mSelectedCountry=listCountry.get(position);
         Toast.makeText(getActivity(), ""+mSelectedCountry.getName(), Toast.LENGTH_SHORT).show();
-//        mCountryName=mSelectedCountry.getName();
         txt_country.setText(mSelectedCountry.getName());
         dialog.dismiss();
     }

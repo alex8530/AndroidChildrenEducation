@@ -8,6 +8,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,14 +18,28 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mrzero.androidadkyaaapp3.R;
+import com.example.mrzero.androidadkyaaapp3.api.APIService;
+import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
+import com.example.mrzero.androidadkyaaapp3.model.getMaterial.MaterialData;
+import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
+import com.example.mrzero.androidadkyaaapp3.model.getSecondMaterial.SecondMaterialData;
 import com.example.mrzero.androidadkyaaapp3.utils.Common;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HomeFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+
+    //class SecondMaterialData come from matrial package
+    List<MaterialData> materials= new ArrayList<>();
+
 
 
     public HomeFragment() {
@@ -73,7 +90,49 @@ public class HomeFragment extends Fragment {
         math_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment fragment= MathmaticsFragment.getInstance();
+                Common.CurrentMaterial=materials.get(3);//note that 3 point to matmatic
+                Fragment fragment= SecondMatrialFragment.getInstance();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
+
+            }
+        });
+
+        LinearLayout  ethraa_layout= view.findViewById(R.id.ethraa_layout);
+        math_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Common.CurrentMaterial=materials.get(0);//note that 3 point to matmatic
+                Fragment fragment= SecondMatrialFragment.getInstance();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
+
+
+            }
+        });
+
+        LinearLayout  eng_layout= view.findViewById(R.id.eng_layout);
+        math_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Common.CurrentMaterial=materials.get(1);//note that 3 point to eng
+                Fragment fragment= SecondMatrialFragment.getInstance();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
+
+
+            }
+        });
+
+        LinearLayout  arabic_layout= view.findViewById(R.id.arabic_layout);
+        math_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Common.CurrentMaterial=materials.get(2);//note that 2 point to arabic
+                Fragment fragment= SecondMatrialFragment.getInstance();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
@@ -90,7 +149,6 @@ public class HomeFragment extends Fragment {
                 //THIS IS FOR SHOW THE DrawerLayout
                 //because the nav in the activity .. i use this
                 DrawerLayout drawer =getActivity().findViewById(R.id.drawer_layout);
-
                 drawer.openDrawer(GravityCompat.START);
             }
         });
@@ -107,8 +165,38 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        getMaterial(Common.retrieveUserDataPreferance(getActivity()).getRememberToken());
 
         return  view;
+    }
+
+    private void getMaterial(final String token) {
+
+        APIService apiService= ServiceGenerator.createService
+                (APIService.class,token );
+        Call<ResultGetMaterial> call =  apiService.getMaterial();
+        call.enqueue(new Callback<ResultGetMaterial>() {
+            @Override
+            public void onResponse(Call<ResultGetMaterial> call, Response<ResultGetMaterial> response) {
+                if (response.isSuccessful()){
+                    Toast.makeText(  getActivity(), "this is suc"+response.body().getData().get(0).getDescription(), Toast.LENGTH_SHORT).show();
+                    materials= response.body().getData();
+                }else {
+                    try {
+                        Toast.makeText(getActivity(), "not suc"+response.errorBody().string()+token, Toast.LENGTH_SHORT).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResultGetMaterial> call, Throwable t) {
+                Toast.makeText(getActivity(), "خطأ في الاتصال" + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
 

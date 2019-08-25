@@ -5,9 +5,8 @@ import android.content.SharedPreferences;
 
 import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
 
+import com.example.mrzero.androidadkyaaapp3.model.getMaterial.MaterialData;
 import com.google.gson.Gson;
-
-import java.io.File;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -43,6 +42,12 @@ public class Common {
     public static  Integer genderId=null;
 
     public static   String TEMP_REGISTER_TOKEN ;
+
+
+
+
+    //this data from matrial
+  public static MaterialData CurrentMaterial= new MaterialData();
 
 
 

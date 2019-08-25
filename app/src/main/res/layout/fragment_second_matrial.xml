@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
     android:layoutDirection="ltr"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.MathmaticsFragment" >
+        tools:context=".ui.fragments.SecondMatrialFragment" >
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -110,7 +110,6 @@
                 <include layout="@layout/math_item_layout" />
                 <include layout="@layout/math_item_layout" />
                 <include layout="@layout/math_item_layout" />
-
 
             </LinearLayout>
 

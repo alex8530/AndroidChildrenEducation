@@ -12,7 +12,7 @@ public class ResultGetMaterial {
     private String status;
     @SerializedName("data")
     @Expose
-    private List<Data> data = null;
+    private List<MaterialData> data = null;
 
     public String getStatus() {
         return status;
@@ -22,11 +22,11 @@ public class ResultGetMaterial {
         this.status = status;
     }
 
-    public List<Data> getData() {
+    public List<MaterialData> getData() {
         return data;
     }
 
-    public void setData(List<Data> data) {
+    public void setData(List<MaterialData> data) {
         this.data = data;
     }
 

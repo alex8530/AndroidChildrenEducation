@@ -75,31 +75,4 @@ public class MaterialFragment extends Fragment {
         });
         return view;
     }
-    private void getMaterial(final String token) {
-
-        APIService apiService= ServiceGenerator.createService
-                (APIService.class,token );
-        Call<ResultGetMaterial> call =  apiService.getMaterial();
-        call.enqueue(new Callback<ResultGetMaterial>() {
-            @Override
-            public void onResponse(Call<ResultGetMaterial> call, Response<ResultGetMaterial> response) {
-                if (response.isSuccessful()){
-                    Toast.makeText(  getActivity(), "this is suc"+response.body().getData().get(0).getDescription(), Toast.LENGTH_SHORT).show();
-                }else {
-                    try {
-                        Toast.makeText(getActivity(), "not suc"+response.errorBody().string()+token, Toast.LENGTH_SHORT).show();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResultGetMaterial> call, Throwable t) {
-                Toast.makeText(getActivity(), "Fail" + t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-    }
 }

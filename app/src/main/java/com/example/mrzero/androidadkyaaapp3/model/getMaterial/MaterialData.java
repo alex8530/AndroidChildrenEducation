@@ -3,7 +3,7 @@ package com.example.mrzero.androidadkyaaapp3.model.getMaterial;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Data {
+public class MaterialData {
 
     @SerializedName("id")
     @Expose

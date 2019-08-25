@@ -4,6 +4,7 @@ import com.example.mrzero.androidadkyaaapp3.model.aboutus.ResultAboutUs;
 import com.example.mrzero.androidadkyaaapp3.model.country.ResultCountryModel;
 import com.example.mrzero.androidadkyaaapp3.model.forgetpassword.ResultForgetPassword;
 import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
+import com.example.mrzero.androidadkyaaapp3.model.getSecondMaterial.ResultGetSecondMaterial;
 import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
 import com.example.mrzero.androidadkyaaapp3.model.login.User;
 import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
@@ -22,6 +23,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 public interface APIService {
     //The register call
@@ -54,11 +56,6 @@ public interface APIService {
 
 
 
-    @Headers({
-            "Accept: application/json"
-    })
-    @GET("educational/material")
-    Call<ResultGetMaterial> getMaterial();
 
 
     @GET("general/countries")
@@ -90,8 +87,22 @@ public interface APIService {
     );
 
 
+
+    @Headers({
+            "Accept: application/json"
+    })
+    @GET("educational/material")
+    Call<ResultGetMaterial> getMaterial();
+
     @GET("pages/about-us")
     Call<ResultAboutUs> getAboutUs();
+
+
+    @GET("educational/{id}/secondary-material")
+    Call<ResultGetSecondMaterial> getSecondMaterial(@Path("id") String id);
+
+
+
 
 
 
