@@ -28,4 +28,5 @@ public class ResultGetSecondMaterial {
     public void setData(List<SecondMaterialData> data) {
         this.data = data;
     }
+
 }

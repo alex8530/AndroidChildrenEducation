@@ -3,8 +3,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-    android:layoutDirection="ltr"
-        android:layout_height="match_parent"
+         android:layoutDirection="rtl"
+         android:layout_height="match_parent"
         tools:context=".ui.fragments.SecondMatrialFragment" >
 
 
@@ -74,140 +74,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginStart="10dp"
+        android:id="@+id/recyle_outer_vertical_material"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-        <TextView
-
-
-            android:id="@+id/textView28"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:text="أعداد"
-            android:textColor="#95989a"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline17"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
-        <HorizontalScrollView
-            android:layoutDirection="rtl"
-            android:id="@+id/horizontalScrollView4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline17"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView28">
-
-            <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right">
-                <include layout="@layout/math_item_layout" />
-                <include layout="@layout/math_item_layout" />
-                <include layout="@layout/math_item_layout" />
-                <include layout="@layout/math_item_layout" />
-                <include layout="@layout/math_item_layout" />
-                <include layout="@layout/math_item_layout" />
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
-        <TextView
-            android:id="@+id/textView30"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:text="جمع"
-
-
-            android:textColor="#95989a"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline17"
-            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView4" />
-        <HorizontalScrollView
-            android:layoutDirection="rtl"
-
-            android:id="@+id/horizontalScrollView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline17"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView30">
-
-            <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right">
-
-                <include layout="@layout/math_item_layout" />
-
-                <include layout="@layout/math_item_layout" />
-
-                <include layout="@layout/math_item_layout" />
-
-                <include layout="@layout/math_item_layout" />
-
-                <include layout="@layout/math_item_layout" />
-
-                <include layout="@layout/math_item_layout" />
-
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
-
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:text="طرح"
-             android:textColor="#95989a"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline17"
-            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
-        <HorizontalScrollView
-            android:layoutDirection="rtl"
-
-            android:id="@+id/horizontalScrollView32"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline17"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView21">
-
-            <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right">
-
-                <include layout="@layout/math_item_layout" />
-
-                <include layout="@layout/math_item_layout" />
-
-                <include layout="@layout/math_item_layout" />
-
-                <include layout="@layout/math_item_layout" />
-
-                <include layout="@layout/math_item_layout" />
-
-                <include layout="@layout/math_item_layout" />
-
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
-
+    </androidx.recyclerview.widget.RecyclerView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

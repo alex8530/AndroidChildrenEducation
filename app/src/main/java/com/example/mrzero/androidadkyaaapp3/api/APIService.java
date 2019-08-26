@@ -5,7 +5,7 @@ import com.example.mrzero.androidadkyaaapp3.model.country.ResultCountryModel;
 import com.example.mrzero.androidadkyaaapp3.model.forgetpassword.ResultForgetPassword;
 import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
 import com.example.mrzero.androidadkyaaapp3.model.getSecondMaterial.ResultGetSecondMaterial;
-import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
+ import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
 import com.example.mrzero.androidadkyaaapp3.model.login.User;
 import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
 import com.example.mrzero.androidadkyaaapp3.model.updateuser.ResultUpdateUser;
@@ -100,10 +100,6 @@ public interface APIService {
 
     @GET("educational/{id}/secondary-material")
     Call<ResultGetSecondMaterial> getSecondMaterial(@Path("id") String id);
-
-
-
-
 
 
 }

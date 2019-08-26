@@ -3,10 +3,8 @@ package com.example.mrzero.androidadkyaaapp3.model.getSecondMaterial;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Section {
 
-public class SecondMaterialData {
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -16,9 +14,6 @@ public class SecondMaterialData {
     @SerializedName("image")
     @Expose
     private String image;
-    @SerializedName("sections")
-    @Expose
-    private ArrayList<Section> sections = null;
 
     public Integer getId() {
         return id;
@@ -36,19 +31,11 @@ public class SecondMaterialData {
         this.name = name;
     }
 
-    public String getImage() {
+    public Object getImage() {
         return image;
     }
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-    public ArrayList<Section> getSections() {
-        return sections;
-    }
-
-    public void setSections(ArrayList<Section> sections) {
-        this.sections = sections;
     }
 }

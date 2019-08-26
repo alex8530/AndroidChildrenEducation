@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,9 +19,10 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.mrzero.androidadkyaaapp3.R;
-import com.example.mrzero.androidadkyaaapp3.api.APIService;
+import com.example.mrzero.androidadkyaaapp3.adapters.SecondMaterialAdapter;
+ import com.example.mrzero.androidadkyaaapp3.api.APIService;
 import com.example.mrzero.androidadkyaaapp3.api.ServiceGenerator;
-import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
+import com.example.mrzero.androidadkyaaapp3.listener.MyItemListener;
 import com.example.mrzero.androidadkyaaapp3.model.getSecondMaterial.ResultGetSecondMaterial;
 import com.example.mrzero.androidadkyaaapp3.model.getSecondMaterial.SecondMaterialData;
 import com.example.mrzero.androidadkyaaapp3.ui.activites.HomeActivity;
@@ -33,11 +36,10 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SecondMatrialFragment extends Fragment {
+public class SecondMatrialFragment extends Fragment  {
 
-
-    List<SecondMaterialData> secondMaterialDataList= new ArrayList<>();
-
+    RecyclerView my_recycler_view; SecondMaterialAdapter adapter;
+    ArrayList<SecondMaterialData> mSecondMaterialDataList= new ArrayList<>();
 
     public SecondMatrialFragment() {
         // Required empty public constructor
@@ -82,8 +84,21 @@ public class SecondMatrialFragment extends Fragment {
 
 
         getSecondMaterial(Common.retrieveUserDataPreferance(getActivity()).getRememberToken());
+
+
+          my_recycler_view = view.findViewById(R.id.recyle_outer_vertical_material);
+
+         my_recycler_view.setHasFixedSize(true);
+
+        adapter = new SecondMaterialAdapter(getActivity() );
+
+        my_recycler_view.setLayoutManager(new LinearLayoutManager(getActivity(),   RecyclerView.VERTICAL, false));
+
+
         return view;
     }
+
+
     private void getSecondMaterial(final String token) {
 
         APIService apiService= ServiceGenerator.createService
@@ -93,8 +108,13 @@ public class SecondMatrialFragment extends Fragment {
             @Override
             public void onResponse(Call<ResultGetSecondMaterial> call, Response<ResultGetSecondMaterial> response) {
                 if (response.isSuccessful()){
-                    Toast.makeText(  getActivity(), "this is suc" , Toast.LENGTH_SHORT).show();
-                    secondMaterialDataList= response.body().getData();
+
+                    mSecondMaterialDataList=  (ArrayList<SecondMaterialData>) response.body().getData();
+
+                    //set data after load from api
+                    adapter.setmListMaterial(mSecondMaterialDataList);
+                    my_recycler_view.setAdapter(adapter);
+
                 }else {
                     try {
                         Toast.makeText(getActivity(), "not suc"+response.errorBody().string()+token, Toast.LENGTH_SHORT).show();
@@ -112,4 +132,6 @@ public class SecondMatrialFragment extends Fragment {
 
 
     }
+
+
 }
