@@ -19,6 +19,29 @@ public class Section {
         return id;
     }
 
+
+    @SerializedName("is_complete")
+    @Expose
+    public Boolean is_complete ;
+
+    public Boolean getIs_complete() {
+        return is_complete;
+    }
+
+    public void setIs_complete(Boolean is_complete) {
+        this.is_complete = is_complete;
+    }
+
+    private Integer parent_position;
+
+    public Integer getParent_position() {
+        return parent_position;
+    }
+
+    public void setParent_position(Integer parent_position) {
+        this.parent_position = parent_position;
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }

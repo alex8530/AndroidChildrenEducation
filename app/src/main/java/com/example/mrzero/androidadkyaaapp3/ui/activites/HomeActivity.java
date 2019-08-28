@@ -112,7 +112,7 @@ public class HomeActivity extends AppCompatActivity
             //clear token and data
             CurrentUserSaved userSaved= new CurrentUserSaved();
             userSaved.setIsLogin(false);
-            Common.saveUserDataPreferance(getApplicationContext(),userSaved);
+             Common.saveUserDataPreferance(getApplicationContext(),userSaved);
             startActivity(new Intent(getApplicationContext(), Login1Activity.class));
             finish();
         }

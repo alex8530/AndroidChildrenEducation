@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import retrofit2.Call;
@@ -16,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mrzero.androidadkyaaapp3.R;
@@ -33,9 +35,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SecondMatrialFragment extends Fragment  {
 
     RecyclerView my_recycler_view; SecondMaterialAdapter adapter;
@@ -58,6 +57,11 @@ public class SecondMatrialFragment extends Fragment  {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_second_matrial, container, false);
+
+
+
+        TextView tv_title_toolbar= view.findViewById(R.id.tv_title_toolbar);
+        tv_title_toolbar.setText(Common.CurrentMaterial.getName());
 
         ImageView menubar= view.findViewById(R.id.menubar);
 
@@ -86,9 +90,9 @@ public class SecondMatrialFragment extends Fragment  {
         getSecondMaterial(Common.retrieveUserDataPreferance(getActivity()).getRememberToken());
 
 
-          my_recycler_view = view.findViewById(R.id.recyle_outer_vertical_material);
+        my_recycler_view = view.findViewById(R.id.recyle_outer_vertical_material);
 
-         my_recycler_view.setHasFixedSize(true);
+        my_recycler_view.setHasFixedSize(true);
 
         adapter = new SecondMaterialAdapter(getActivity() );
 
@@ -97,7 +101,6 @@ public class SecondMatrialFragment extends Fragment  {
 
         return view;
     }
-
 
     private void getSecondMaterial(final String token) {
 
@@ -114,6 +117,7 @@ public class SecondMatrialFragment extends Fragment  {
                     //set data after load from api
                     adapter.setmListMaterial(mSecondMaterialDataList);
                     my_recycler_view.setAdapter(adapter);
+
 
                 }else {
                     try {
@@ -132,6 +136,7 @@ public class SecondMatrialFragment extends Fragment  {
 
 
     }
+
 
 
 }

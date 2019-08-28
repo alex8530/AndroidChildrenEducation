@@ -4,8 +4,11 @@ import com.example.mrzero.androidadkyaaapp3.model.aboutus.ResultAboutUs;
 import com.example.mrzero.androidadkyaaapp3.model.country.ResultCountryModel;
 import com.example.mrzero.androidadkyaaapp3.model.forgetpassword.ResultForgetPassword;
 import com.example.mrzero.androidadkyaaapp3.model.getMaterial.ResultGetMaterial;
+import com.example.mrzero.androidadkyaaapp3.model.getQuestion.ResultGetQuestion;
 import com.example.mrzero.androidadkyaaapp3.model.getSecondMaterial.ResultGetSecondMaterial;
- import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
+import com.example.mrzero.androidadkyaaapp3.model.getStatistics.ResultGetStatistics;
+import com.example.mrzero.androidadkyaaapp3.model.getanswer.ResultGetAnswer;
+import com.example.mrzero.androidadkyaaapp3.model.login.ResultLoginModel;
 import com.example.mrzero.androidadkyaaapp3.model.login.User;
 import com.example.mrzero.androidadkyaaapp3.model.register.ResultRegisterModel;
 import com.example.mrzero.androidadkyaaapp3.model.updateuser.ResultUpdateUser;
@@ -100,6 +103,30 @@ public interface APIService {
 
     @GET("educational/{id}/secondary-material")
     Call<ResultGetSecondMaterial> getSecondMaterial(@Path("id") String id);
+
+
+
+    @GET("educational/{material_id}/{secondary_material_id}/{section_id}/questions")
+    Call<ResultGetQuestion> getQuestion(
+            @Path("material_id") String material_id,
+            @Path("secondary_material_id") String secondary_material_id,
+            @Path("section_id") String section_id
+    );
+
+
+    @FormUrlEncoded
+    @POST("educational/answer-check")
+    Call<ResultGetAnswer> getAnswer(
+            @Field("question_id") String question_id ,
+            @Field("option_id") String option_id ,
+            @Field("is_repeat") String is_repeat ,
+            @Field("time_elapsed") String time_elapsed
+    );
+
+
+
+    @GET("/student/statistics")
+    Call<ResultGetStatistics> getStatistics();
 
 
 }

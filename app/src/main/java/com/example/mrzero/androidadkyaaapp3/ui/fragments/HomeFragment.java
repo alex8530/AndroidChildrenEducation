@@ -75,16 +75,15 @@ public class HomeFragment extends Fragment {
         tv_name.setText(Common.retrieveUserDataPreferance(getActivity().getApplicationContext()).getName());
         //  I do the next because i need to show the nav when click in image icon , and click on fragment itself
          LinearLayout challange_layout= view.findViewById(R.id.challange_layout);
+         //todo remove this LinearLayout
         challange_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment fragment= ChalengeFragment.getInstance();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
 
             }
         });
+
 
         LinearLayout  math_layout= view.findViewById(R.id.math_layout);
         math_layout.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +99,7 @@ public class HomeFragment extends Fragment {
         });
 
         LinearLayout  ethraa_layout= view.findViewById(R.id.ethraa_layout);
-        math_layout.setOnClickListener(new View.OnClickListener() {
+        ethraa_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Common.CurrentMaterial=materials.get(0);//note that 3 point to matmatic
@@ -114,7 +113,7 @@ public class HomeFragment extends Fragment {
         });
 
         LinearLayout  eng_layout= view.findViewById(R.id.eng_layout);
-        math_layout.setOnClickListener(new View.OnClickListener() {
+        eng_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Common.CurrentMaterial=materials.get(1);//note that 3 point to eng
@@ -128,7 +127,7 @@ public class HomeFragment extends Fragment {
         });
 
         LinearLayout  arabic_layout= view.findViewById(R.id.arabic_layout);
-        math_layout.setOnClickListener(new View.OnClickListener() {
+        arabic_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Common.CurrentMaterial=materials.get(2);//note that 2 point to arabic

@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import com.example.mrzero.androidadkyaaapp3.model.CurrentUserSaved;
 
 import com.example.mrzero.androidadkyaaapp3.model.getMaterial.MaterialData;
+import com.example.mrzero.androidadkyaaapp3.model.getSecondMaterial.SecondMaterialData;
+import com.example.mrzero.androidadkyaaapp3.model.getSecondMaterial.Section;
 import com.google.gson.Gson;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -46,8 +48,11 @@ public class Common {
 
 
 
-    //this data from matrial
   public static MaterialData CurrentMaterial= new MaterialData();
+  public static Section CurrentSection= new Section();
+  public static SecondMaterialData CurrentSecondMaterial= new SecondMaterialData();
+
+
 
 
 

@@ -6,12 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mrzero.androidadkyaaapp3.R;
 import com.example.mrzero.androidadkyaaapp3.listener.MyItemListener;
+import com.example.mrzero.androidadkyaaapp3.listener.MyItemListener_nested;
 import com.example.mrzero.androidadkyaaapp3.model.getSecondMaterial.Section;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -23,6 +27,11 @@ public class SectionMaterialAdapter extends RecyclerView.Adapter<SectionMaterial
     public ArrayList<Section> getmList() {
         return mSectionsList;
     }
+
+
+
+
+    //    boolean isCompleteQuestion=false;
 
     public void setmList(ArrayList<Section> mList) {
         if (mList!=null){
@@ -37,15 +46,17 @@ public class SectionMaterialAdapter extends RecyclerView.Adapter<SectionMaterial
 
     ArrayList<Section> mSectionsList= new ArrayList<>();
 
-    public MyItemListener getMyItemListener() {
-        return myItemListener;
+
+    private MyItemListener_nested myItemListenerNested;
+
+    public MyItemListener_nested getMyItemListenerNested() {
+        return myItemListenerNested;
     }
 
-    public void setMyItemListener(MyItemListener myItemListener) {
-        this.myItemListener = myItemListener;
+    public void setMyItemListenerNested(MyItemListener_nested myItemListenerNested) {
+        this.myItemListenerNested = myItemListenerNested;
     }
 
-    private MyItemListener myItemListener;
     private Context mContext;
 
     public SectionMaterialAdapter(Context mContext) {
@@ -64,6 +75,17 @@ public class SectionMaterialAdapter extends RecyclerView.Adapter<SectionMaterial
     @Override
     public void onBindViewHolder(@NonNull SectionViewHolder holder, int position) {
         holder.tv_description.setText(mSectionsList.get(position).getName());
+
+
+        if (mSectionsList.get(position).getIs_complete()){
+            //show check icon
+         holder.img_check.setVisibility(View.VISIBLE);
+
+        }else {
+        //  hide icon check
+            holder.img_check.setVisibility(View.INVISIBLE);
+
+        }
 
     }
 
@@ -87,7 +109,12 @@ public class SectionMaterialAdapter extends RecyclerView.Adapter<SectionMaterial
             constraintLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    myItemListener.onClickItem(getAdapterPosition());
+                    //if the section is complete>>
+                    if (mSectionsList.get(getAdapterPosition()).getIs_complete()){
+                        Toast.makeText(mContext, "لقد تم حل جميع المسائل في هذا المساق", Toast.LENGTH_SHORT).show();
+                    }else {
+                        myItemListenerNested.onClickItemNested(mSectionsList.get(getAdapterPosition()));
+                    }
                 }
             });
 

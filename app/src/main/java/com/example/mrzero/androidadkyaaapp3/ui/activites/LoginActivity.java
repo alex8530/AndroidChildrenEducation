@@ -111,8 +111,12 @@ public class LoginActivity extends AppCompatActivity {
 
                 }else {
 
+                    try {
                         Toast.makeText(LoginActivity.this,
-                                "البيانات المدخلة غير صالحة" , Toast.LENGTH_SHORT).show();
+                                "البيانات المدخلة غير صالحة" + response.errorBody().string() , Toast.LENGTH_SHORT).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                 }
             }
