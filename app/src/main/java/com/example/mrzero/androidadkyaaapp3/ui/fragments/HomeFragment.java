@@ -188,7 +188,6 @@ public class HomeFragment extends Fragment {
                     }
                 }
             }
-
             @Override
             public void onFailure(Call<ResultGetMaterial> call, Throwable t) {
                 Toast.makeText(getActivity(), "خطأ في الاتصال" + t.getMessage(), Toast.LENGTH_SHORT).show();
