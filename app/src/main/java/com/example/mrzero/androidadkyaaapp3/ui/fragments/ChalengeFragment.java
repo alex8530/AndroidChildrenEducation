@@ -14,7 +14,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.os.CountDownTimer;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -39,6 +41,7 @@ import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 /**
@@ -71,6 +74,15 @@ public class ChalengeFragment extends Fragment {
          * but if i put 1 >> that mean after new question request > the questionNumber with alwas return 1 ,
          * so >> if the user go out from the app > i put repeatExam = 1
         */
+
+
+    long totalSeconds = 10000000;//max second
+    long intervalSeconds = 1;
+    CountDownTimer timer;
+    int hour=0;
+    int minte=0;
+    int sec=0;
+
     public ChalengeFragment() {
         // Required empty public constructor
     }
@@ -83,18 +95,44 @@ public class ChalengeFragment extends Fragment {
         return Instance;
     }
 
-
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_chalenge, container, false);
-        ImageView menubar= view.findViewById(R.id.menubar);
+        final ImageView menubar= view.findViewById(R.id.menubar);
         TextView tv_title= view.findViewById(R.id.tv_title);
         tv_title.setText(Common.CurrentSection.getName());
+        init(view);
 
         sendQuestionRequest();
+
+          timer = new CountDownTimer(totalSeconds * 1000, intervalSeconds * 1000) {
+
+
+            public void onTick(long millisUntilFinished) {
+                Log.d("seconds elapsed: " , ((totalSeconds * 1000 - millisUntilFinished) / 1000 ) + " ");
+                sec++;
+                if (sec==59){
+                    sec=0;
+                    minte++;
+                    if (minte ==59){
+                        minte=0;
+                        hour++;
+                    }
+                }
+
+                String timeString = String.format(Locale.getDefault(),"%02d:%02d:%02d",hour,minte,sec);
+                tv_time_elapesd.setText(timeString);
+            }
+
+            public void onFinish() {
+                Log.d( "done!", "Time's up!");
+            }
+
+        }.start();
+
 
         menubar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,7 +155,6 @@ public class ChalengeFragment extends Fragment {
         });
 
 
-        init(view);
 
          btn1.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -236,7 +273,7 @@ public class ChalengeFragment extends Fragment {
         // todo get time , change current question
         String QuestionID=String.valueOf(CurrunQuestion.getId());
         String optionID=String.valueOf( mOptionSelectedId );
-        String timeElapsed="00:02:30";
+        String timeElapsed=tv_time_elapesd.getText().toString();
 
         if (mOptionSelectedId==null){
             Toast.makeText(getActivity(), "الرجاء اختيار اجابة", Toast.LENGTH_SHORT).show();
@@ -355,6 +392,7 @@ public class ChalengeFragment extends Fragment {
         showDialog();
 
     }
+
 
     private void resetAnswerButton() {
         btn1.clearFocus();
