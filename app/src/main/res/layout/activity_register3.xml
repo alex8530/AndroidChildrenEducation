@@ -7,7 +7,7 @@
     android:layoutDirection="rtl"
     android:background="@drawable/bg_signup"
     android:layout_height="match_parent"
-    tools:context=".Register3Activity">
+    tools:context=".ui.activites.Register3Activity">
 
     <ImageView
         android:id="@+id/imageView6"
@@ -54,7 +54,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/pick_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="2dp"
@@ -84,4 +84,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
+    <ProgressBar
+        android:visibility="invisible"
+        android:id="@+id/progress_bar_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register" />
 </androidx.constraintlayout.widget.ConstraintLayout>

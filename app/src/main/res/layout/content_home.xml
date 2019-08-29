@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".HomeActivity"
+    tools:context=".ui.activites.HomeActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:showIn="@layout/app_bar_home">
 
@@ -78,7 +78,7 @@
 
 
         <TextView
-
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="محمد"
@@ -187,7 +187,7 @@
                 android:background="@drawable/shape_abc"
                 android:gravity="center"
                 android:orientation="vertical"
-
+                android:id="@+id/ethraa_layout"
                 android:padding="20dp">
 
                 <ImageView
@@ -220,6 +220,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/eng_layout"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="13dp"
@@ -257,6 +258,7 @@
                 android:background="@drawable/shape_ar"
                 android:gravity="center"
                 android:orientation="vertical"
+                android:id="@+id/arabic_layout"
 
                 android:padding="20dp">
 

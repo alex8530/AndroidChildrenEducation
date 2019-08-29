@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mrzero.androidadkyaaapp3">
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <application
 
         android:allowBackup="true"
@@ -10,28 +14,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".StartActivity">
+        <activity android:name=".ui.activites.MainActivity" />
+        <activity android:name=".ui.activites.Login1Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".RestorPassActivity" />
-        <activity android:name=".Register1Activity" />
-        <activity android:name=".Register2Activity" />
-        <activity android:name=".Login1Activity" />
+        <activity android:name=".ui.activites.LoginActivity" />
+        <activity android:name=".ui.activites.RegisterActivity" />
+        <activity android:name=".ui.activites.RestorPassActivity" />
+        <activity android:name=".ui.activites.Register1Activity" />
+        <activity android:name=".ui.activites.Register2Activity" />
+        <activity android:name=".ui.activites.Register3Activity" />
         <activity
-            android:name=".Register3Activity"
+            android:name=".ui.activites.StartActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".WhoAreWeActivity" />
-        <activity android:name=".ContactUsActivity" />
-        <activity android:name=".MatrialActivity" />
-        <activity android:name=".ChangePasswordActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".ui.activites.WhoAreWeActivity" />
+        <activity android:name=".ui.activites.ContactUsActivity" />
+        <activity android:name=".ui.activites.HomeActivity" />
     </application>
 
 </manifest>

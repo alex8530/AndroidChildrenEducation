@@ -11,4 +11,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+
+    <string name="class1">الصف الأول</string>
+    <string name="class2">الصف الثاني</string>
+    <string name="class3">الصف الثالت</string>
+    <string name="class4">الصف الرابع</string>
+    <string name="class5">الصف الخامس</string>
+    <string name="class6">الصف السادس</string>
 </resources>

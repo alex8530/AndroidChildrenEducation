@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="#4FACFE"
-tools:context=".WhoAreWeActivity">
+tools:context=".ui.activites.WhoAreWeActivity">
 
     <View
         android:id="@+id/view2"
@@ -84,7 +84,7 @@ tools:context=".WhoAreWeActivity">
             android:orientation="vertical">
 
             <TextView
-
+                android:id="@+id/tv_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

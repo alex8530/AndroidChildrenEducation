@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_login"
     android:layoutDirection="rtl"
-    tools:context=".LoginActivity">
+    tools:context=".ui.activites.LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -49,7 +49,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/TextLabe2"
-
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="425dp">
 
@@ -59,7 +58,9 @@
                 android:drawableStart="@drawable/mail"
                 android:drawablePadding="7dp"
                 android:hint="البريد الاكتروني"
-                android:padding="20dp"
+                android:padding="15dp"
+                android:textDirection="rtl"
+                android:id="@+id/edt_mail"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,7 +92,9 @@
                 android:hint="كلمة المرور"
                 android:inputType="textPassword"
                 android:fontFamily="@font/cairo_regular"
-                android:padding="20dp"
+                android:padding="15dp"
+                android:gravity="right"
+                android:id="@+id/edt_pass"
                 android:textSize="15sp"
                 android:theme="@style/TextLabe2" />
         </com.google.android.material.textfield.TextInputLayout>

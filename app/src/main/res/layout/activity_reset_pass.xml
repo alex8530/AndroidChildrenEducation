@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_signup"
-    tools:context=".RestorPassActivity">
+    tools:context=".ui.activites.RestorPassActivity">
 
 
 
@@ -40,7 +40,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/textinput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -53,18 +53,19 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_email"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/mail"
             android:drawablePadding="7dp"
             android:hint="البريد الاكتروني"
-            android:padding="15dp"
-            android:textSize="17sp" />
+             android:textSize="17sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <Button
-        android:id="@+id/btn_register"
+        android:id="@+id/btn_resetPass"
         android:layout_width="0dp"
          android:layout_marginTop="36dp"
         android:background="@drawable/shape_enter_btn"
@@ -72,9 +73,9 @@
         android:textColor="@android:color/white"
         android:layout_height="wrap_content"
         android:textSize="16.7sp"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
-         app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintEnd_toEndOf="@+id/textinput"
+         app:layout_constraintStart_toStartOf="@+id/textinput"
+        app:layout_constraintTop_toBottomOf="@+id/textinput" />
 
 
 

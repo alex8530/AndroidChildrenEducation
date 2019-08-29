@@ -6,13 +6,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#fff"
     android:layout_width="280dp"
-    android:layout_height="360dp">
+    android:padding="20dp"
+    android:layout_height="wrap_content">
 
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +33,7 @@
                 android:layout_marginRight="8dp"
                 android:text="تم حل تمارين القسم بنجاح"
                 android:textColor="#2EE2B1"
-                android:textSize="20sp"
+                android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
@@ -43,13 +44,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-
         android:layout_marginEnd="32dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="لقد أتممت حل التمرين بنجاح وهذا سيؤهلك للانتقال الى المرحلة التالي"
         android:textColor="#434343"
-        android:textSize="17sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
 
 
     <Button
-        android:id="@+id/btn_register"
+        android:id="@+id/btn_ok"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -68,7 +68,7 @@
         android:background="#2EE2B1"
         android:text="القسم التالي"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
