@@ -6,10 +6,12 @@ import android.os.Bundle;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +33,29 @@ import java.io.IOException;
 public class MaterialFragment extends Fragment {
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        //this is for handel back press button inside fragment
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                    // handle back button's click listener
+
+                    Fragment fragment= HomeFragment.getInstance();
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
+
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
 
     public MaterialFragment() {
         // Required empty public constructor

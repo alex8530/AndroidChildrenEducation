@@ -415,6 +415,8 @@ public class ChalengeFragment extends Fragment {
     public void onResume(){
         super.onResume();
         timer.start();
+
+        //this is for handel back press button inside fragment
         getView().setFocusableInTouchMode(true);
         getView().requestFocus();
         getView().setOnKeyListener(new View.OnKeyListener() {

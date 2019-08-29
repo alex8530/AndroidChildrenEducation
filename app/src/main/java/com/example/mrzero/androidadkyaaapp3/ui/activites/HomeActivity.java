@@ -71,6 +71,8 @@ public class HomeActivity extends AppCompatActivity
         } else {
 //            super.onBackPressed();
             // go
+            startActivity(new Intent(getApplicationContext(), Login1Activity.class));
+            finish();
         }
     }
 
