@@ -36,6 +36,7 @@ import com.example.mrzero.androidadkyaaapp3.model.getanswer.Answer;
 import com.example.mrzero.androidadkyaaapp3.model.getanswer.ResultGetAnswer;
 import com.example.mrzero.androidadkyaaapp3.ui.activites.HomeActivity;
 import com.example.mrzero.androidadkyaaapp3.utils.Common;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -47,6 +48,7 @@ public class ChalengeFragment extends Fragment {
 
    private Button btn1,btn2,btn3,btn4,btn_send_answer;
   private   TextView tv_question,tv_time_elapesd,tv_question_number;
+  ImageView img_question;
 
     AlertDialog dialog;
     AlertDialog.Builder mBuilder;
@@ -117,8 +119,7 @@ public class ChalengeFragment extends Fragment {
 
         init(view);
 
-
-        btn1.setOnTouchListener(new View.OnTouchListener() {
+         btn1.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
@@ -226,6 +227,7 @@ public class ChalengeFragment extends Fragment {
         tv_question_number = view.findViewById(R.id.tv_question_number);
         tv_question_number.setText(questionNumber + "/20");
         mSeekBar=view.findViewById(R.id.seekbar);
+        img_question=view.findViewById(R.id.img_question);
         mSeekBar.setProgress(questionNumber);
     }
 
@@ -399,8 +401,8 @@ public class ChalengeFragment extends Fragment {
                        CurrunQuestion= response.body().getData() ;
                        options= (ArrayList<Option>) CurrunQuestion.getOptions();
                        resetAnswerButton();
-                       setButtonsQuestionName();
-                       updateQuestionNumberWithSeekBar();
+                       updateUiWithData();
+
                    }
                }
            }
@@ -433,13 +435,7 @@ public class ChalengeFragment extends Fragment {
     }
 
 
-    private void updateQuestionNumberWithSeekBar() {
-        tv_question_number.setText(questionNumber + "/20");
-        mSeekBar.setProgress(questionNumber);
-
-    }
-
-    private void setButtonsQuestionName() {
+    private void updateUiWithData() {
 
         if (CurrunQuestion!= null && options !=null){
 
@@ -452,6 +448,17 @@ public class ChalengeFragment extends Fragment {
             String desc=CurrunQuestion.getText();
             tv_question.setText(Html.fromHtml( desc ));
 
+
+            if (CurrunQuestion.getImage()!=null){
+                //show image and set it
+                img_question.setVisibility(View.VISIBLE);
+                Picasso.get().load(CurrunQuestion.getImage()).into(img_question);
+            }else {
+                img_question.setVisibility(View.GONE);
+            }
         }
+
+        tv_question_number.setText(questionNumber + "/20");
+        mSeekBar.setProgress(questionNumber);
     }
 }

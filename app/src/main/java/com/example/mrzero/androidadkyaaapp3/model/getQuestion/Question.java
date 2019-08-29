@@ -18,7 +18,7 @@ public class Question {
     private Object fraction;
     @SerializedName("image")
     @Expose
-    private Object image;
+    private String image;
     @SerializedName("retype_answer")
     @Expose
     private String retypeAnswer;
@@ -53,11 +53,11 @@ public class Question {
         this.fraction = fraction;
     }
 
-    public Object getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Object image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
