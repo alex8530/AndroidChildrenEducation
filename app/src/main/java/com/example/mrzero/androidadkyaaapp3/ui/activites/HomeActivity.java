@@ -69,7 +69,10 @@ public class HomeActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+//            super.onBackPressed();
+            // go
+            startActivity(new Intent(getApplicationContext(), Login1Activity.class));
+            finish();
         }
     }
 

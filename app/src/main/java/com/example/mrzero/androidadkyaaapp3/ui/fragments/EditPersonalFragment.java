@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -29,6 +30,7 @@ import retrofit2.Response;
 
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -665,5 +667,30 @@ public class EditPersonalFragment extends Fragment implements MyItemListener {
         Toast.makeText(getActivity(), ""+mSelectedCountry.getName(), Toast.LENGTH_SHORT).show();
         txt_country.setText(mSelectedCountry.getName());
         dialog.dismiss();
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //this is for handel back press button inside fragment
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                    // handle back button's click listener
+
+                    Fragment fragment= HomeFragment.getInstance();
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
+
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }

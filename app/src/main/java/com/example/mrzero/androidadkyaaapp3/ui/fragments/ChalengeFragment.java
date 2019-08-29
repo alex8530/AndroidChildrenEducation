@@ -14,7 +14,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.os.CountDownTimer;
 import android.text.Html;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -39,6 +42,7 @@ import com.example.mrzero.androidadkyaaapp3.utils.Common;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 /**
@@ -65,36 +69,87 @@ public class ChalengeFragment extends Fragment {
 
 
 
-        Integer repeatExam=1;
+    Integer repeatExam=1;
     /*
        //0>>  will reapet the exam and start from question 1 and increase the question questionNumber after new request
          * but if i put 1 >> that mean after new question request > the questionNumber with alwas return 1 ,
          * so >> if the user go out from the app > i put repeatExam = 1
+         * * so here >> always start from question 1
         */
+
+
+    long totalSeconds = 10000000;//max second
+    long intervalSeconds = 1;
+    CountDownTimer timer;
+      int hour=0;
+      int minte=0;
+      int sec=0;
+
     public ChalengeFragment() {
         // Required empty public constructor
     }
     private static ChalengeFragment Instance;
 
     public static ChalengeFragment getInstance(){
+
+
+         
         if (Instance==null) {
             Instance= new ChalengeFragment();
         }
         return Instance;
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        timer.cancel();
+    }
+
+
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+          hour=0;
+          minte=0;
+          sec=0;
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_chalenge, container, false);
-        ImageView menubar= view.findViewById(R.id.menubar);
+        final ImageView menubar= view.findViewById(R.id.menubar);
         TextView tv_title= view.findViewById(R.id.tv_title);
         tv_title.setText(Common.CurrentSection.getName());
+        init(view);
 
         sendQuestionRequest();
+
+          timer = new CountDownTimer(totalSeconds * 1000, intervalSeconds * 1000) {
+
+
+            public void onTick(long millisUntilFinished) {
+                sec++;
+                if (sec==59){
+                    sec=0;
+                    minte++;
+                    if (minte ==59){
+                        minte=0;
+                        hour++;
+                    }
+                }
+
+                String timeString = String.format(Locale.getDefault(),"%02d:%02d:%02d",hour,minte,sec);
+                Log.d("seconds elapsed: " , timeString );
+
+                tv_time_elapesd.setText(timeString);
+            }
+
+            public void onFinish() {
+                Log.d( "done!", "Time's up!");
+            }
+
+        } ;
+
 
         menubar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,7 +172,6 @@ public class ChalengeFragment extends Fragment {
         });
 
 
-        init(view);
 
          btn1.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -224,6 +278,7 @@ public class ChalengeFragment extends Fragment {
         btn_send_answer= view.findViewById(R.id.btn_send_answer);
         tv_question= view.findViewById(R.id.textView25);
         tv_time_elapesd = view.findViewById(R.id.tv_time);
+        tv_time_elapesd.setText("00:00:00");
         tv_question_number = view.findViewById(R.id.tv_question_number);
         tv_question_number.setText(questionNumber + "/20");
         mSeekBar=view.findViewById(R.id.seekbar);
@@ -236,7 +291,7 @@ public class ChalengeFragment extends Fragment {
         // todo get time , change current question
         String QuestionID=String.valueOf(CurrunQuestion.getId());
         String optionID=String.valueOf( mOptionSelectedId );
-        String timeElapsed="00:02:30";
+        String timeElapsed=tv_time_elapesd.getText().toString();
 
         if (mOptionSelectedId==null){
             Toast.makeText(getActivity(), "الرجاء اختيار اجابة", Toast.LENGTH_SHORT).show();
@@ -356,6 +411,71 @@ public class ChalengeFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        timer.start();
+
+        //this is for handel back press button inside fragment
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                    // handle back button's click listener
+                    showAlarmNoteToEndTheQuiz();
+                     return true;
+                }
+                return false;
+            }
+        });
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        timer.cancel();
+
+    }
+
+
+    private void showAlarmNoteToEndTheQuiz() {
+        timer.cancel();
+
+        mBuilder = new AlertDialog.Builder(getActivity() );
+        View mView = getLayoutInflater().inflate(R.layout.show_alarm_message_to_end_quiz, null);
+        mBuilder.setView(mView);
+        dialog = mBuilder.create();
+        dialog.show();
+
+        final Button btn_ok =  mView.findViewById(R.id.btn_ok);
+        final Button btn_cancel =  mView.findViewById(R.id.btn_cancel);
+
+        btn_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                timer.cancel();
+                dialog.dismiss();
+                Fragment fragment= SecondMatrialFragment.getInstance();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
+
+            }
+        });
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+
+            }
+        });
+
+        //dismiss if cancel
+    }
+
     private void resetAnswerButton() {
         btn1.clearFocus();
         btn2.clearFocus();
@@ -415,6 +535,7 @@ public class ChalengeFragment extends Fragment {
     }
 
     private void showNoQuestionDailog() {
+        timer.cancel();
         mBuilder = new AlertDialog.Builder(getActivity() );
         View mView = getLayoutInflater().inflate(R.layout.no_question_dailog, null);
         mBuilder.setView(mView);
@@ -426,6 +547,7 @@ public class ChalengeFragment extends Fragment {
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                timer.cancel();
                 dialog.dismiss();
                 Fragment fragment= HomeFragment.getInstance();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

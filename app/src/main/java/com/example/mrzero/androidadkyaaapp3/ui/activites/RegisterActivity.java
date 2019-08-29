@@ -162,18 +162,6 @@ public class RegisterActivity extends AppCompatActivity implements MyItemListene
                         // save token and data of user
 
                         Data  data= response.body().getData() ;
-//
-//                        CurrentUserSaved userSaved= new CurrentUserSaved();
-//                        userSaved.setIsLogin(true);
-//                        userSaved.setRememberToken(data.getApiToken());
-//                        userSaved.setName(data.getUser().getName());
-//                        userSaved.setEmail(data.getUser().getEmail());
-//                        userSaved.setId(data.getUser().getId());
-                       //do not save any thing else token.. be i need it in the second activity
-                        //all information must be saved from login class not from here...
-
-
-
                         Common.TEMP_REGISTER_TOKEN=data.getApiToken();
 
                         Toast.makeText(RegisterActivity.this, "تمت عملية التسجيل بنجاح !", Toast.LENGTH_SHORT).show();
@@ -184,8 +172,7 @@ public class RegisterActivity extends AppCompatActivity implements MyItemListene
                         try {
                             Toast.makeText(RegisterActivity.this,
                                     "البيانات المدخلة غير صالحة"+response.errorBody().string(), Toast.LENGTH_SHORT).show();
-                            Toast.makeText(RegisterActivity.this, response.code(), Toast.LENGTH_SHORT).show();
-                            Toast.makeText(RegisterActivity.this, response.body().toString(), Toast.LENGTH_SHORT).show();
+
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
