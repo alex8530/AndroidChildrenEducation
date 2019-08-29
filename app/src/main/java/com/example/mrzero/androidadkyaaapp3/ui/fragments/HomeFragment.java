@@ -41,6 +41,7 @@ public class HomeFragment extends Fragment {
     List<MaterialData> materials= new ArrayList<>();
 
 
+    private boolean mIsDownloadReady=false;//to prevent crash if user click on item befor get data from api
 
     public HomeFragment() {
         // Required empty public constructor
@@ -89,10 +90,13 @@ public class HomeFragment extends Fragment {
         math_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Common.CurrentMaterial=materials.get(3);//note that 3 point to matmatic
-                Fragment fragment= SecondMatrialFragment.getInstance();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+                if (mIsDownloadReady){
+                    Common.CurrentMaterial=materials.get(3);//note that 3 point to matmatic
+                    Fragment fragment= SecondMatrialFragment.getInstance();
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+                }
+
 
 
             }
@@ -102,11 +106,14 @@ public class HomeFragment extends Fragment {
         ethraa_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Common.CurrentMaterial=materials.get(0);//note that 3 point to matmatic
-                Fragment fragment= SecondMatrialFragment.getInstance();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+                if (mIsDownloadReady){
+                    Common.CurrentMaterial=materials.get(0);//note that 3 point to matmatic
+                    Fragment fragment= SecondMatrialFragment.getInstance();
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
 
+
+                }
 
 
             }
@@ -116,10 +123,13 @@ public class HomeFragment extends Fragment {
         eng_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Common.CurrentMaterial=materials.get(1);//note that 3 point to eng
-                Fragment fragment= SecondMatrialFragment.getInstance();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
+                if (mIsDownloadReady){
+                    Common.CurrentMaterial=materials.get(1);//note that 3 point to eng
+                    Fragment fragment= SecondMatrialFragment.getInstance();
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+                }
 
 
 
@@ -130,10 +140,13 @@ public class HomeFragment extends Fragment {
         arabic_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Common.CurrentMaterial=materials.get(2);//note that 2 point to arabic
-                Fragment fragment= SecondMatrialFragment.getInstance();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+                if (mIsDownloadReady){
+                    Common.CurrentMaterial=materials.get(2);//note that 2 point to arabic
+                    Fragment fragment= SecondMatrialFragment.getInstance();
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.contianer_frame, fragment).commit();
+
+                }
 
 
             }
@@ -180,7 +193,9 @@ public class HomeFragment extends Fragment {
                 if (response.isSuccessful()){
                     Toast.makeText(  getActivity(), "this is suc"+response.body().getData().get(0).getDescription(), Toast.LENGTH_SHORT).show();
                     materials= response.body().getData();
+                    mIsDownloadReady=true;
                 }else {
+                    mIsDownloadReady=false;
                     try {
                         Toast.makeText(getActivity(), "not suc"+response.errorBody().string()+token, Toast.LENGTH_SHORT).show();
                     } catch (IOException e) {
@@ -191,6 +206,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onFailure(Call<ResultGetMaterial> call, Throwable t) {
                 Toast.makeText(getActivity(), "خطأ في الاتصال" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                mIsDownloadReady=false;
             }
         });
 

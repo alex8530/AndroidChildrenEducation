@@ -48,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 sendLoginRequest();
+
             }
         });
 
@@ -55,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
              startActivity(new Intent(getApplicationContext(),RestorPassActivity.class));
+             finish();
 
 
             }
@@ -106,6 +108,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     Intent  intent =new Intent(getApplicationContext(), HomeActivity.class);
                     startActivity(intent);
+                    finish();
 
 
 
